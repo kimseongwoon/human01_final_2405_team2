@@ -884,14 +884,15 @@ element.style {
     height: 43px;
 }
 
-.cpinfo, .push-body {
-    -webkit-transition: all 0.15s ease;
-    -moz-transition: all 0.15s ease;
-    transition: all 0.15s ease;
-}
-
-.cbp-spmenu-top {
-    top: -410px;
+/*company info*/
+.cpinfo {
+    position: fixed;
+    width: 100%; 
+    background: url(/_ui/desktop/common/images/gsretail/common/bg_cpinfo.gif) no-repeat #f7f7f7;
+    min-width: 960px;
+    height: 380px; 
+    background-position: 50% 50%;
+    border-bottom: 1px solid #dfdfdf;
 }
 
 .cbp-spmenu-horizontal {
@@ -902,14 +903,18 @@ element.style {
     overflow: hidden;
 }
 
-.cpinfo {
-    position: fixed;
-    /* width: 100%; */
-    background: url(/_ui/desktop/common/images/gsretail/common/bg_cpinfo.gif) no-repeat #f7f7f7;
-    min-width: 960px;
-    /* height: 380px; */
-    background-position: 50% 50%;
-    border-bottom: 1px solid #dfdfdf;
+.cbp-spmenu-top {
+    top: -410px;
+}
+
+.cpinfo, .push-body {
+    -webkit-transition: all 0.15s ease;
+    -moz-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+}
+
+.cpmenu li h3 {
+    padding: 20px 0 20px 10px;
 }
 
 .cpmenu li h3 {
@@ -918,9 +923,6 @@ element.style {
     padding-bottom: 10px;
 }
 
-.cpmenu li h3 {
-    padding: 20px 0 20px 10px;
-}
 
 .cpmenu li a {
     padding-left: 20px;
@@ -1588,4 +1590,149 @@ element.style {
 .btm_sns_area .btm_sns > img {
     float: left;
     padding: 4px 16px 0 0;
+}
+
+.cpmenu .dotline {
+    border-bottom: 1px dotted #dfdfdf;
+}
+
+.cpmenu li li h3 a {
+    display: block;
+    font-size: 16px;
+    color: #222;
+    padding: 0 0 5px 0;
+    background: none;
+}
+
+.gnbw:after, .gnbwrap .gnb ul:after {
+    content: "";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.dsp_non {
+    display: none;
+}
+
+.mlb_ani, .gnb_bg {
+    display: none;
+}
+
+.mlb_ani > li {
+    position: relative;
+    float: left;
+    width: 239px;
+    height: 294px;
+    border-left: 1px solid #e8e8e8;
+}
+
+.mlb_ani > li > a {
+    display: block;
+    height: 100%;
+    padding: 0 20px;
+}
+
+.mlb_cnt .tltwrap {
+    width: 190px;
+    display: block;
+}
+
+.mlb_tlt {
+    font-size: 17px;
+    color: #333;
+    padding: 24px 0px 16px 0px;
+    display: block;
+}
+
+.mlb_txt {
+    font-size: 12px;
+    color: #666;
+    line-height: 20px;
+    display: block;
+}
+
+.mlb_ani > li.ico_cvs_bg1_n01 {
+    background: url(/_ui/desktop/common/images/gscvs/common/gnb_cvs_ico1_n01.png) no-repeat 141px 151px;
+}
+
+.mlb_cnt > li+li {
+    width: 239px;
+    height: 294px;
+}
+
+.mlb_ani > li.ico_cvs_bg_simply {
+    background: url(/_ui/desktop/common/images/gscvs/common/ico_cvs_bg_simply.png) no-repeat 70px 230px;
+}
+
+.mlb_cnt > li+li+li {
+    position: absolute;
+    left: 479px;
+    top: 0;
+    width: 239px;
+    height: 294px;
+}
+
+.mlb_ani > li.ico_cvs_bg1_n02 {
+    background: url(/_ui/desktop/common/images/gscvs/common/gnb_cvs_ico1_n02.png) no-repeat 147px 200px;
+}
+
+.mlb_cnt > li+li+li+li {
+    position: absolute;
+    left: 720px;
+    top: 0;
+    width: 239px;
+    height: 294px;
+}
+
+.mlb_cnt2 {
+    position: absolute;
+    top: 86px;
+    left: 0;
+    z-index: 999;
+    width: 960px;
+    height: 294px;
+    overflow: hidden;
+    background: #f7f7f7;
+    border-right: 1px solid #e8e8e8;
+    border-top: 1px solid #e8e8e8;
+}
+
+.mlb_cnt2>li {
+    height: 294px;
+    top: 0;
+    left: 0;
+    background: url(/_ui/desktop/common/images/gscvs/common/gnb_ico4.png) no-repeat 379px 206px;
+    width: 479px;
+}
+
+.mlb_cnt2>li+li {
+    height: 294px;
+    position: absolute;
+    left: 480px;
+    top: 0;
+    background: url(/_ui/desktop/common/images/gscvs/common/gnb_ico5.png) no-repeat 139px 206px;
+    width: 239px;
+}
+
+.mlb_cnt2>li+li+li {
+    height: 294px;
+    top: 0;
+    left: 720px;
+    position: absolute;
+    background: url(/_ui/desktop/common/images/gscvs/common/mlb_cnt2_ico03.png) no-repeat 156px 212px;
+}
+
+.mlb_cnt3 {
+    position: absolute;
+    top: 86px;
+    left: 0;
+    z-index: 999;
+    width: 960px;
+    height: 294px;
+    overflow: hidden;
+    background: #f7f7f7;
+    border-right: 1px solid #e8e8e8;
+    border-top: 1px solid #e8e8e8;
 }
