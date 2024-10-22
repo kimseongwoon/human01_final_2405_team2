@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "_//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml/DTD/xhtml-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 
 </html>
@@ -22,23 +22,27 @@
                   <li class="brd_gs25"><a href="http://gs25.gsretail.com/gscvs/ko/main" class="on">GS25</a></li>
                   <li class="brd_gsshop"><a href="https://www.gsshop.com/index.gs">GS SHOP</a></li><!-- 2021-07-01(브랜드) 추가 -->
                   <li class="brd_gsssm"><a href="http://gsthefresh.gsretail.com/thefresh/ko/main">GS THE FRESH</a></li><!-- 2019_GSTHEFRESH_로고변경 (공통) -->
-                        <li class="brd_gspop"><a href="http://www.popcard.co.kr/popcard/ko/main" target="_blank" title="새창">POP</a></li><!-- 2016-01-25 로거삽입 -->
-                           </ul>
+                  <li class="brd_gspop"><a href="http://www.popcard.co.kr/popcard/ko/main" target="_blank" title="새창">POP</a></li><!-- 2016-01-25 로거삽입 -->
+               </ul>
             </div>
             <!-- //brand -->
             <!-- utility -->
             <div class="uty">
                <ul>
-                  <li><a href="/gscvs/ko/sign-up/login">로그인</a></li>
-                        <li>
-                           <a href="/gscvs/ko/sign-up/join-main?siteGubun=2">
-                              회원가입</a>
-                        </li>
-                     <li><a href="https://gsretail.recruiter.co.kr/">채용안내</a></li>
-                      <li><a href="/gscvs/ko/customer-satisfaction/main">고객센터</a></li> <!-- 2020-10-29수정 -->
-                      
-                      
-                      <li id="headerLanguage"><a href="#" class="lang" title="메뉴열기">LANGUAGE<span class="invisible">다국어 사이트 더보기</span></a>
+                  <li>
+                     <a href="/gscvs/ko/sign-up/login">로그인</a>
+                  </li>
+                  <li>
+                     <a href="/gscvs/ko/sign-up/join-main?siteGubun=2">회원가입</a>
+                  </li>
+                  <li>
+                     <a href="https://gsretail.recruiter.co.kr/">채용안내</a>
+                  </li>
+                  <li>
+                     <a href="/gscvs/ko/customer-satisfaction/main">고객센터</a>
+                  </li> 
+                  <!-- 2020-10-29수정 -->
+                     <li id="headerLanguage"><a href="#" class="lang" title="메뉴열기">LANGUAGE<span class="invisible">다국어 사이트 더보기</span></a>
                         <div class="langwrap" style="display:none">
                            <ul>
                               <li>
@@ -197,15 +201,21 @@ $(document).ready(function(){
 
 //]]>
 </script>
+<body style="margin: 0px; height: 100%; background-color: blue(14, 14, 14);">
+   <img style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);" 
+   src="https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/top_bg.gif">
+</body>
 
 <div class="gnbw">
 <h1 class="logo">
    <a href="/gscvs/ko/main">GS25</a>
-</h1>
+   <img src="http://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/logo.gif">
+</h1>   
 <!-- 2023-10-01 : 10월 GS25홈페이지 로고 한글 버전 적용 관련 건 Start-->
 <!-- 2023-10-01 : 10월 GS25홈페이지 로고 한글 버전 적용 관련 건 End-->
 <div class="gnb" id="gnb_menu">
-   <p class="skyscraper"><a href="/gscvs/ko/products/gs-tv" class="btn_sc" title="GS25 공식유튜브 보러가기"></a></p>
+   <p class="skyscraper">
+      <a href="/gscvs/ko/products/gs-tv" class="btn_sc" title="GS25 공식유튜브 보러가기"></a></p>
    <ul>
       <li><h2><a href="javascript:void(0);" class="">상품</a></h2>
          <!-- 2depth : mlb start -->
@@ -1165,7 +1175,7 @@ var eventTabController = new tabClickController();  //  임의 변수에 생성�
                <input type="button" class="btn_sch2" value="전체보기" id="searchAllBtn">
             </div>
             <div class="txt">
-               <p style="color:#d04001" "="">
+               <p style="color:#d04001" ">
                   <strong class="font-weight:bold;">※ 일부 점포는 행사에서 제외</strong>
                   될 수 있으며, 행사상품 이미지는 실제와 다를 수 있습니다. 
                   <strong class="font-weight:bold;">행사상품은 팝카드 결제시 10% 할인이 적용(일부 상품 제외)됩니다.</strong>
@@ -1202,6 +1212,7 @@ var eventTabController = new tabClickController();  //  임의 변수에 생성�
          </p>
          <div class="flag_box ONE_TO_ONE">
             <p class="flg01">
+               <img src="https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/products/flag_bg.png">
                <span>1+1</span>
             </p>
          </div>
@@ -1331,430 +1342,456 @@ var eventTabController = new tabClickController();  //  임의 변수에 생성�
 
 <footer>
    <div class="ftwrap">
-            <!-- footer menu -->
-            <!-- LOGGER(TM) TRACKING SCRIPT V.40 FOR logger.co.kr / 22400 : COMBINE TYPE / DO NOT ALTER THIS SCRIPT. -->
-            <script type="text/javascript">
-            var _TRK_LID="22400";var _L_TD="ssl.logger.co.kr";var _TRK_CDMN="";</script>
-            <script type="text/javascript">
-            var _CDN_DOMAIN = location.protocol == "https:" ? "https://fs.bizspring.net" : "http://fs.bizspring.net";
-            (function(b,s){var f=b.getElementsByTagName(s)
-            [0],j=b.createElement(s);j.async=true;j.src='//fs.bizspring.net/fs4/bstrk.1m.js';f.parentNode.insertBefore(j,f);})(document,'script');</script>
-            <noscript>
-               <img alt="Logger Script" width="1" height="1"
-                  src="http://ssl.logger.co.kr/tracker.tsp?u=22400&amp;js=N" />
-            </noscript>
-            <!-- END OF LOGGER TRACKING SCRIPT -->
-            
-            <script type="text/javascript">
-               //<![CDATA[
+   <!-- footer menu -->
+   <!-- LOGGER(TM) TRACKING SCRIPT V.40 FOR logger.co.kr / 22400 : COMBINE TYPE / DO NOT ALTER THIS SCRIPT. -->
+   <script type="text/javascript">var _TRK_LID="22400";var _L_TD="ssl.logger.co.kr";var _TRK_CDMN="";</script>
+   <script type="text/javascript">
+      var _CDN_DOMAIN = location.protocol == "https:" ? "https://fs.bizspring.net" : "http://fs.bizspring.net";
+      (function(b,s){var f=b.getElementsByTagName(s)
+      [0],j=b.createElement(s);j.async=true;j.src='//fs.bizspring.net/fs4/bstrk.1m.js';f.parentNode.insertBefore(j,f);})(document,'script');</script>
+      <noscript>
+         <img alt="Logger Script" width="1" height="1"
+            src="http://ssl.logger.co.kr/tracker.tsp?u=22400&amp;js=N" />
+      </noscript>
+      <!-- END OF LOGGER TRACKING SCRIPT -->
+      <script type="text/javascript">
+            //<![CDATA[
+   
+            $(document).ready(function(){
+               var otherFamilySite = new footerFamilySiteManager();
+               otherFamilySite.setResource( ".ret_link .family", ".ULWrap1st" );
+               otherFamilySite.setResource( ".ret_link .brand", ".ULWrap2nd" );
+               otherFamilySite.init();
+            });
+   
+            //]]>
+</script>
       
-               $(document).ready(function(){
-                  var otherFamilySite = new footerFamilySiteManager();
-                  otherFamilySite.setResource( ".ret_link .family", ".ULWrap1st" );
-                  otherFamilySite.setResource( ".ret_link .brand", ".ULWrap2nd" );
-                  otherFamilySite.init();
-               });
-      
-               //]]>
-               </script>
-      
-               <div class="ft">
-                  <div class="ft_menu">
-                     <ul>
-                        <li><a href="/gscvs/ko/about-gs25/gs25introduce">GS25소개 </a></li>
-                        <li><a href="http://www.gsretail.com/gsretail/ko/corporation/partnership/submain">입점상담</a></li>
-                        <li><a href="/gscvs/ko/customer-satisfaction/mantomancnsoundform">제휴문의</a></li>
-                        <!-- 
-                           <li><a href="/gscvs/ko/footer/special-sales">특판안내</a></li>
-                         -->
-                        <li><a href="#" onclick="javascript:layer_open_footer('layerFooter', this);">입지제안</a></li>
-                        <li><a href="http://www.gsretail.com/gsretail/ko/footer/rental-store-all">임대상가안내</a></li>
-                        <!--<li><a href="http://www.gsretail.com/gsretail/ko/corporation/jeongdo-management/system/report">정도경영제보</a></li><!-- 2017-01-24 삭제 -->
-                        <li><a href="/gscvs/ko/footer/site-map">사이트맵</a></li>
-                     </ul>
-                  </div>
-                  <div class="ret_link">
-                     <dl class="family">
-                        <dt>
-                           <a href="#;">계열사 보기<span>></span></a>
-                        </dt>
-                        <dd style="display: block;">
-                           <div class="ULWrap1st" style="overflow: hidden; width: 178px; height: 284px; position: absolute; left: -1px; top: -285px; display: none;">
-                              <!-- 2020-07-15 수정 -->
-                              <ul style="top: 1px; left: 0px; transform: matrix(1, 0, 0, 1, 0, 285);">
-                                 <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 계열사/(주)GS 바로가기\' ); }catch(_e){ }');" href="http://www.gs.co.kr/" target="_blank" title="새창">(주)GS</a></li>
-                                 <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 계열사/GS네트웍스 바로가기\' ); }catch(_e){ }');" href="http://gsnws.co.kr/" target="_blank" title="새창">GS네트웍스</a></li>
-                                 <!-- 2020-07-15 추가 -->
-                                 <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 계열사/GS&amp;Point.com 바로가기\' ); }catch(_e){ }');" href="http://www.gsnpoint.com/" target="_blank" title="새창">GS&amp;Point.com</a></li>
-                                 <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 계열사/GS칼텍스(Kixx) 바로가기\' ); }catch(_e){ }');" href="http://www.kixx.co.kr/" target="_blank" title="새창">GS칼텍스(Kixx)</a></li>
-                                 <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 계열사/GS엠비즈 바로가기\' ); }catch(_e){ }');" href="http://www.gsmbiz.co.kr/" target="_blank" title="새창">GS엠비즈</a></li>
-                                 <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 계열사/GS스포츠 바로가기\' ); }catch(_e){ }');" href="http://www.fcseoul.com/new_intro.jsp" target="_blank" title="새창">GS스포츠</a></li>
-                                 <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 계열사/GS EPS 바로가기\' ); }catch(_e){ }');" href="http://www.gseps.com/kor/main/main.aspx" target="_blank" title="새창">GS EPS</a></li>
-                                 <!-- <li><a onMouseDown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS리테일/메인페이지/푸터 계열사/d&amp;shop 바로가기\' ); }catch(_e){ }');"
-                                          href="http://www.dnshop.com/main/initMain.dnshop" target="_blank" title="새창" >d&amp;shop</a></li> -->
-                                 <!-- 2017-03-29 삭제 -->
-                                 <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 계열사/GS건설 바로가기\' ); }catch(_e){ }');" href="http://www.gsconst.co.kr/" target="_blank" title="새창">GS건설</a></li>
-                                 <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 계열사/엘리시안강촌 바로가기\' ); }catch(_e){ }');" href="http://www.elysian.co.kr/" target="_blank" title="새창">엘리시안강촌</a></li>
-                              </ul>
-                           </div>
-                        </dd>
-                     </dl>
-                     <dl class="brand">
-                        <dt>
-                           <a href="#;">GS리테일 브랜드<span>보기</span></a>
-                        </dt>
-                        <dd style="display: block;">
-                           <div class="ULWrap2nd" style="overflow: hidden; width: 171px; height: 184px; position: absolute; left: -1px; top: -185px; display: none;">
-                              <ul style="top: 1px; left: 0px; transform: matrix(1, 0, 0, 1, 0, 185);">
-                                 <li><a href="http://www.gsretail.com/gsretail/ko/company">GS리테일</a></li>
-                                 <li><a href="http://gs25.gsretail.com/gscvs/ko/main">GS25</a></li>
-                                 <li><a href="http://www.gsshop.com">GS SHOP</a></li>
-                                 <!-- 2021-07-01(브랜드) 추가 -->												
-                                 <li><a href="http://gsthefresh.gsretail.com/thefresh/ko/main">GS THE FRESH</a></li>
-                                 <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 브랜드/팝카드 바로가기\' ); }catch(_e){ }');" href="http://www.popcard.co.kr/popcard/ko/main" target="_blank" title="새창">팝카드</a></li>
-                                 <!-- 2016-04-18 추가 -->
-                                 <li class="line_clamp"><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 브랜드/그랜드 인터컨티넨탈 서울 파르나스 바로가기\' ); }catch(_e){ }');" href="https://seoul.intercontinental.com/grandicparnas" target="_blank" title="새창">
-                                          그랜드 인터컨티넨탈<br>서울 파르나스</a></li><!-- 2022-04-22 수정 -->
-                                 <li class="line_clamp"><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 브랜드/인터컨티넨탈 서울 코엑스 바로가기\' ); }catch(_e){ }');" href="https://seoul.intercontinental.com/iccoex" target="_blank" title="새창">
-                                          인터컨티넨탈<br>서울 코엑스</a></li><!-- 2022-04-22 수정 -->
-                                 <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 브랜드/나인트리호텔 명동 바로가기\' ); }catch(_e){ }');" href="http://www.ninetreehotels.com/nth1/" target="_blank" title="새창"> 
-                                          나인트리호텔 명동</a></li><!-- 2022-04-22 수정 -->
-                                 <li class="line_clamp"><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 브랜드/나인트리 프리미어 호텔 명동 II 바로가기\' ); }catch(_e){ }');" href="http://www.ninetreehotels.com/nth2/" target="_blank" title="새창"> 
-                                          나인트리 프리미어 <br>호텔 명동 II</a></li><!-- 2022-04-22 추가 -->
-                                 <li class="line_clamp"><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 브랜드/나인트리 프리미어 호텔 인사동 바로가기\' ); }catch(_e){ }');" href="http://www.ninetreehotels.com/nth3" target="_blank" title="새창"> 
-                                          나인트리 프리미어 <br>호텔 인사동</a></li><!-- 2022-04-22 추가 -->
-                                 <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 브랜드/나인트리 호텔 동대문 바로가기\' ); }catch(_e){ }');" href="http://www.ninetreehotels.com/nth4" target="_blank" title="새창"> 
-                                          나인트리 호텔 동대문</a></li><!-- 2022-04-22 추가 -->
-                                 <li class="line_clamp"><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 브랜드/나인트리 프리미어 호텔 서울 판교 바로가기\' ); }catch(_e){ }');" href="http://www.ninetreehotels.com/nth5" target="_blank" title="새창"> 
-                                          나인트리 프리미어 <br>호텔 서울 판교</a></li><!-- 2022-04-22 추가 -->
-                                 <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 브랜드/파르나스몰 바로가기\' ); }catch(_e){ }');" href="http://www.parnasmall.com/" target="_blank" title="새창">
-                                          파르나스몰</a></li>
-                                 <!-- //2016-04-18 추가 -->
-                                 <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 브랜드/우리동네 딜리버리 바로가기\' ); }catch(_e){ }');" href="http://woodel.co.kr/" target="_blank" title="새창">
-                                          우리동네 딜리버리</a></li><!-- 2020-07-29 추가 -->	
-                              </ul>
-                           </div>
-                        </dd>
-                     </dl>
-                  </div>
-               </div>
-               <!-- 2016-05-23 추가 -->
-               <div class="btm_sns_warp">
-                  <div class="btm_sns_area">
-                     <div class="left">
-                        <div class="btm_sns">
-                           <img src="http://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/main/btm_gs25_sns.jpg" alt="GS25와 소통하세요!">							
-                           <!-- 2020-12-21 수정 -->
-                           <ul>
-                              <li><a href="https://www.youtube.com/channel/UCl0HemfAt7dShJRf59_cuGQ" class="youtube" target="_blank" title="새 창"><span class="hide">youtube</span></a></li>
-                              <li><a href="https://www.instagram.com/gs25_official" class="instagram" target="_blank" title="새 창"><span class="hide">instagram</span></a></li>
-                              <li><a href="https://www.facebook.com/funGS25/" class="facebook" target="_blank" title="새 창"><span class="hide">facebook</span></a></li>
-                              <li><a href="http://gs25friend.blog.me/" class="blog" target="_blank" title="새 창"><span class="hide">blog</span></a></li> 
-                              <!-- 2016-06-02 수정 -->
-                              <li><a href="http://pf.kakao.com/_xlWdyu" class="kakaoplus" target="_blank" title="새 창"><span class="hide">카카오플러스친구</span></a></li>
-                              <!-- 2018-05-04 추가 -->
-                           </ul>
-                           <!-- //2020-12-21 수정 -->
-                        </div>
-                     </div>
-                     <!-- <div class="right">
-                        <a href="http://gs25.gsretail.com/gscvs/ko/store-services/myrefrigerator"><img src="http://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/main/btm_gs25_link.jpg" alt="담고 쓰고 쌓고! GS25 나만의 냉장고" /></a>
-                           </div> 2022-07-20 삭제 -->
-                  </div>
-               </div>
-               <!-- //2016-05-23 추가 -->
-               <!-- footer copyright -->
-               <div class="ft_copy">
-                  <div class="copywrap">
-                     <div class="copy">
-                        <div class="copy_menu">
-                           <ul>
-                              <li>
-                                 <a href="/gscvs/ko/footer/privacy">개인정보처리방침</a>
-                              </li>
-                              <li>
-                                 <a href="/gscvs/ko/footer/member-terms">GS리테일 멤버십 회원약관</a>
-                              </li>
-                              <li>
-                                 <a href="https://gs25.gsretail.com/membership-services/non-membership-accrual-service-info">GS25 비회원 적립 서비스 이용 안내서</a>
-                              </li>
-                              <li>
-                                 <a href="#" onclick="javascript:layer_open_footer('layerFooter-email', this);">이메일무단수집거부</a></li>
-                              <li>
-                                 <a href="/gscvs/ko/about-gs25/map">오시는길</a>
-                              </li>
-                              <li class="bold">
-                                 <a href="http://www.gsretail.com/gsretail/ko/esg/ethics/precision?tab=3">정도경영/파트너사 목소리</a> 
-                              </li>
-                              <li class="bold">
-                                 <a href="http://www.gsretail.com/gsretail/ko/esg/ethics/precision?tab=3">CEO에게 말한다</a>
-                              </li>
-                           </ul>
-                        </div>
-                        <div class="copy_txt">
-                           <p>
-                              주소 : 서울시 강남구 논현로 508(역삼동 679번지 GS타워) | 대표이사 : 허연수 | 사업자등록번호 : 116-81-18745
-                           </p>
-                           <!--						<p>
-                              footer.copy.txt2</p> 2022-08-01 삭제 -->
-                           <p>Copyright 2015 GSRetail. Co. Ltd., ALL Right Reserved.</p>
-                        </div>
-                     </div>
-                     <!-- 2015-09-02 수정 -->
-                     <ul class="ft_banner">
-                        <!-- 2018-09-04 추가 -->
-                        <li><img src="http://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/mark03.gif" alt="고객만족 경영 명예의 전당 헌액"></li>
-                        <li><img src="http://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/mark04.gif" alt="한국서비스대상 종합유통부문 종합대상 5회"></li>
-                        <li><img src="http://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/mark05.gif" alt="GS25 편의점부문 1위,GS수퍼 대형슈퍼마켓 부문 1위"></li>
-                        <!-- //2018-09-04 추가 -->
-                        <li>
-                           <img src="http://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/mark06.gif" alt="2019 코스피 마켓리더 브랜드 TOP 20 선정">
-                        </li>
-                        <!-- 2019-08-26 추가 -->			
-                     </ul>
-                     <!-- //2015-09-02 수정 -->					
-                  </div>
-               </div> 
-               <script type="text/javascript">
-                  //<![CDATA[
-               
-                  //1:1 문의 페이지 이동
-                  $.goMantoMan = function(){
-                     if("gsretail" == "gscvs"){
-                        location.href="http://www.gsretail.com/gsretail/ko/customer-satisfaction/submain";
-                     } else if("gscvs" == "gscvs"){
-                        location.href="http://www.gsretail.com/gsretail/ko/customer-satisfaction/mantomancnsoundgs25form";
-                     } else if("gssuper" == "gscvs"){
-                        location.href="http://www.gsretail.com/gsretail/ko/customer-satisfaction/mantomancnsoundgssmform";
-                     }
-                  };
-               
-                  //]]>
-               </script>
-               <div class="layer">	
-                  <div class="bg"></div>	
-                  <div id="layerFooter" class="pop-layer">		
-                     <div class="popwrap lypop_my2">			
-                        <div class="pop_tltwrap">				
-                           <h4 class="pop_tlt1">입지제안</h4>		
-                        </div>			
-                        <div class="pop_cnt">			
-                           <div class="all_wrap">					
-                              <div class="tblwrap">						
-                                 <table class="tbl_ctype2" summary="입지제안의 기준 및 접수처를 확인할 수 있으며 사업부,추천기준,접수처를 제공합니다.">							
-                                    <caption>입지제안 안내팝업</caption>							
-                                    <colgroup>								
-                                       <col style="width:138px">								
-                                       <col style="width:285px">								
-                                       <col style="width:155px">							
-                                    </colgroup>							
-                                    <thead>								
-                                       <tr>									
-                                          <th scope="col">사업부</th>									
-                                          <th scope="col">추천 기준</th>									
-                                          <th scope="col">접수처</th>								
-                                       </tr>							
-                                    </thead>							
-                                    <tbody>								
-                                       <tr>									
-                                          <td class="ft_ct">
-                                             <img alt="GS25 로고" src="http://hpimg.gsretail.com/_ui/desktop/common/images/gsretail/common/ft_logo_gs25.png">
-                                          </td>									
-                                          <td>
-                                             지역 : 전국
-                                             <br>
-                                             규모 : 영업면적 10평 이상 임차점포
-                                          </td>									
-                                          <td style="padding-left:15px;">
-                                             <a class="btn onbtn" href="http://gs25.gsretail.com/gscvs/ko/franchise-info/one-on-ones-consult/location-offer" target="_blank" title="새 창" style="padding:10px 10px; margin:0; font-size:13px; background:#666;">입지제안 바로가기</a>
-                                          </td>								
-                                       </tr>								
-                                       <tr>									
-                                          <td class="ft_ct">
-                                             <img alt="GS수퍼마켓 로고" src="http://hpimg.gsretail.com/_ui/desktop/common/images/gsretail/common/ft_logo_gssuper.png">
-                                          </td>									
-                                          <td>
-                                             지역 : 전국
-                                             <br>
-                                             규모 : 전용면적 50평 이상
-                                          </td>									
-                                          <td style="padding-left:15px;">
-                                             <a class="btn onbtn" href="https://gsthefresh.gsretail.com/thefresh/ko/franchise-info/one-on-ones-consult/offer-location" target="_blank" title="새 창" style="padding:10px 10px; margin:0; font-size:13px; background:#666;">입지제안 바로가기</a>
-                                          </td>								
-                                       </tr>	
-                                    </tbody>						
-                                 </table>					
-                              </div>					 
-                              <div class="btnwrap">						
-                                 <input class="btn sty01 onbtn" type="button" value="확인" onclick="$('#layerFooter').find('.pop_cls a').trigger('click');">					
-                              </div>				
-                           </div>			
-                        </div>			
-                        <div class="pop_cls">				
-                           <a href="#">닫기</a>			
-                        </div>		
-                     </div>	
+<div class="ft">
+   <div class="ft_menu">
+      <ul>
+         <li><a href="/gscvs/ko/about-gs25/gs25introduce">GS25소개 </a></li>
+         <li><a href="http://www.gsretail.com/gsretail/ko/corporation/partnership/submain">입점상담</a></li>
+         <li><a href="/gscvs/ko/customer-satisfaction/mantomancnsoundform">제휴문의</a></li>
+            <!-- 
+               <li><a href="/gscvs/ko/footer/special-sales">특판안내</a></li>
+               -->
+         <li><a href="#" onclick="javascript:layer_open_footer('layerFooter', this);">입지제안</a></li>
+         <li><a href="http://www.gsretail.com/gsretail/ko/footer/rental-store-all">임대상가안내</a></li>
+         <!--<li><a href="http://www.gsretail.com/gsretail/ko/corporation/jeongdo-management/system/report">정도경영제보</a></li><!-- 2017-01-24 삭제 -->
+         <li><a href="/gscvs/ko/footer/site-map">사이트맵</a></li>
+      </ul>
+   </div>
+   <div class="ret_link">
+      <dl class="family">
+         <dt>
+            <a href="#;">계열사 보기<span>></span></a>
+         </dt>
+         <dd style="display: block;">
+            <div class="ULWrap1st" style="overflow: hidden; width: 178px; height: 284px; position: absolute; left: -1px; top: -285px; display: none;">
+               <!-- 2020-07-15 수정 -->
+               <ul style="top: 1px; left: 0px; transform: matrix(1, 0, 0, 1, 0, 285);">
+                  <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 계열사/(주)GS 바로가기\' ); }catch(_e){ }');" href="http://www.gs.co.kr/" target="_blank" title="새창">(주)GS</a></li>
+                  <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 계열사/GS네트웍스 바로가기\' ); }catch(_e){ }');" href="http://gsnws.co.kr/" target="_blank" title="새창">GS네트웍스</a></li>
+                  <!-- 2020-07-15 추가 -->
+                  <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 계열사/GS&amp;Point.com 바로가기\' ); }catch(_e){ }');" href="http://www.gsnpoint.com/" target="_blank" title="새창">GS&amp;Point.com</a></li>
+                  <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 계열사/GS칼텍스(Kixx) 바로가기\' ); }catch(_e){ }');" href="http://www.kixx.co.kr/" target="_blank" title="새창">GS칼텍스(Kixx)</a></li>
+                  <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 계열사/GS엠비즈 바로가기\' ); }catch(_e){ }');" href="http://www.gsmbiz.co.kr/" target="_blank" title="새창">GS엠비즈</a></li>
+                  <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 계열사/GS스포츠 바로가기\' ); }catch(_e){ }');" href="http://www.fcseoul.com/new_intro.jsp" target="_blank" title="새창">GS스포츠</a></li>
+                  <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 계열사/GS EPS 바로가기\' ); }catch(_e){ }');" href="http://www.gseps.com/kor/main/main.aspx" target="_blank" title="새창">GS EPS</a></li>
+                  <!-- <li><a onMouseDown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS리테일/메인페이지/푸터 계열사/d&amp;shop 바로가기\' ); }catch(_e){ }');"
+                           href="http://www.dnshop.com/main/initMain.dnshop" target="_blank" title="새창" >d&amp;shop</a></li> -->
+                  <!-- 2017-03-29 삭제 -->
+                  <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 계열사/GS건설 바로가기\' ); }catch(_e){ }');" href="http://www.gsconst.co.kr/" target="_blank" title="새창">GS건설</a></li>
+                  <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 계열사/엘리시안강촌 바로가기\' ); }catch(_e){ }');" href="http://www.elysian.co.kr/" target="_blank" title="새창">엘리시안강촌</a></li>
+               </ul>
+            </div>
+         </dd>
+      </dl>
+      <dl class="brand">
+         <dt>
+            <a href="#;">GS리테일 브랜드<span>보기</span></a>
+         </dt>
+         <dd style="display: block;">
+            <div class="ULWrap2nd" style="overflow: hidden; width: 171px; height: 184px; position: absolute; left: -1px; top: -185px; display: none;">
+               <ul style="top: 1px; left: 0px; transform: matrix(1, 0, 0, 1, 0, 185);">
+                  <li><a href="http://www.gsretail.com/gsretail/ko/company">GS리테일</a></li>
+                  <li><a href="http://gs25.gsretail.com/gscvs/ko/main">GS25</a></li>
+                  <li><a href="http://www.gsshop.com">GS SHOP</a></li>
+                  <!-- 2021-07-01(브랜드) 추가 -->												
+                  <li><a href="http://gsthefresh.gsretail.com/thefresh/ko/main">GS THE FRESH</a></li>
+                  <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 브랜드/팝카드 바로가기\' ); }catch(_e){ }');" href="http://www.popcard.co.kr/popcard/ko/main" target="_blank" title="새창">팝카드</a></li>
+                  <!-- 2016-04-18 추가 -->
+                  <li class="line_clamp"><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 브랜드/그랜드 인터컨티넨탈 서울 파르나스 바로가기\' ); }catch(_e){ }');" href="https://seoul.intercontinental.com/grandicparnas" target="_blank" title="새창">
+                           그랜드 인터컨티넨탈<br>서울 파르나스</a></li><!-- 2022-04-22 수정 -->
+                  <li class="line_clamp"><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 브랜드/인터컨티넨탈 서울 코엑스 바로가기\' ); }catch(_e){ }');" href="https://seoul.intercontinental.com/iccoex" target="_blank" title="새창">
+                           인터컨티넨탈<br>서울 코엑스</a></li><!-- 2022-04-22 수정 -->
+                  <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 브랜드/나인트리호텔 명동 바로가기\' ); }catch(_e){ }');" href="http://www.ninetreehotels.com/nth1/" target="_blank" title="새창"> 
+                           나인트리호텔 명동</a></li><!-- 2022-04-22 수정 -->
+                  <li class="line_clamp"><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 브랜드/나인트리 프리미어 호텔 명동 II 바로가기\' ); }catch(_e){ }');" href="http://www.ninetreehotels.com/nth2/" target="_blank" title="새창"> 
+                           나인트리 프리미어 <br>호텔 명동 II</a></li><!-- 2022-04-22 추가 -->
+                  <li class="line_clamp"><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 브랜드/나인트리 프리미어 호텔 인사동 바로가기\' ); }catch(_e){ }');" href="http://www.ninetreehotels.com/nth3" target="_blank" title="새창"> 
+                           나인트리 프리미어 <br>호텔 인사동</a></li><!-- 2022-04-22 추가 -->
+                  <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 브랜드/나인트리 호텔 동대문 바로가기\' ); }catch(_e){ }');" href="http://www.ninetreehotels.com/nth4" target="_blank" title="새창"> 
+                           나인트리 호텔 동대문</a></li><!-- 2022-04-22 추가 -->
+                  <li class="line_clamp"><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 브랜드/나인트리 프리미어 호텔 서울 판교 바로가기\' ); }catch(_e){ }');" href="http://www.ninetreehotels.com/nth5" target="_blank" title="새창"> 
+                           나인트리 프리미어 <br>호텔 서울 판교</a></li><!-- 2022-04-22 추가 -->
+                  <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 브랜드/파르나스몰 바로가기\' ); }catch(_e){ }');" href="http://www.parnasmall.com/" target="_blank" title="새창">
+                           파르나스몰</a></li>
+                  <!-- //2016-04-18 추가 -->
+                  <li><a onmousedown="eval('try{ _trk_clickTrace( \'EVT\', \'PC웹/GS25/메인페이지/푸터 브랜드/우리동네 딜리버리 바로가기\' ); }catch(_e){ }');" href="http://woodel.co.kr/" target="_blank" title="새창">
+                           우리동네 딜리버리</a></li><!-- 2020-07-29 추가 -->	
+               </ul>
+            </div>
+         </dd>
+      </dl>
+   </div>
+</div>
+<!-- 2016-05-23 추가 -->
+<div class="btm_sns_warp">
+   <div class="btm_sns_area">
+      <div class="left">
+         <div class="btm_sns">
+            <img src="http://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/main/btm_gs25_sns.jpg" alt="GS25와 소통하세요!">
+            <img src="https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/main/ico_btm_sns.png">
+            <!-- 2020-12-21 수정 -->
+            <ul>
+               <li><a href="https://www.youtube.com/channel/UCl0HemfAt7dShJRf59_cuGQ" class="youtube" target="_blank" title="새 창"><span class="hide">youtube</span></a></li>
+               <li><a href="https://www.instagram.com/gs25_official" class="instagram" target="_blank" title="새 창"><span class="hide">instagram</span></a></li>
+               <li><a href="https://www.facebook.com/funGS25/" class="facebook" target="_blank" title="새 창"><span class="hide">facebook</span></a></li>
+               <li><a href="http://gs25friend.blog.me/" class="blog" target="_blank" title="새 창"><span class="hide">blog</span></a></li> 
+               <!-- 2016-06-02 수정 -->
+               <li><a href="http://pf.kakao.com/_xlWdyu" class="kakaoplus" target="_blank" title="새 창"><span class="hide">카카오플러스친구</span></a></li>
+               <!-- 2018-05-04 추가 -->
+            </ul>
+            <!-- //2020-12-21 수정 -->
+         </div>
+      </div>
+      <!-- <div class="right">
+         <a href="http://gs25.gsretail.com/gscvs/ko/store-services/myrefrigerator"><img src="http://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/main/btm_gs25_link.jpg" alt="담고 쓰고 쌓고! GS25 나만의 냉장고" /></a>
+            </div> 2022-07-20 삭제 -->
+   </div>
+</div>
+<!-- //2016-05-23 추가 -->
+<!-- footer copyright -->
+<div class="ft_copy">
+   <div class="copywrap">
+      <div class="copy">
+         <div class="copy_menu">
+            <ul>
+               <li>
+                  <a href="/gscvs/ko/footer/privacy">개인정보처리방침</a>
+               </li>
+               <li>
+                  <a href="/gscvs/ko/footer/member-terms">GS리테일 멤버십 회원약관</a>
+               </li>
+               <li>
+                  <a href="https://gs25.gsretail.com/membership-services/non-membership-accrual-service-info">GS25 비회원 적립 서비스 이용 안내서</a>
+               </li>
+               <li>
+                  <a href="#" onclick="javascript:layer_open_footer('layerFooter-email', this);">이메일무단수집거부</a></li>
+               <li>
+                  <a href="/gscvs/ko/about-gs25/map">오시는길</a>
+               </li>
+               <li class="bold">
+                  <a href="http://www.gsretail.com/gsretail/ko/esg/ethics/precision?tab=3">정도경영/파트너사 목소리</a> 
+               </li>
+               <li class="bold">
+                  <a href="http://www.gsretail.com/gsretail/ko/esg/ethics/precision?tab=3">CEO에게 말한다</a>
+               </li>
+            </ul>
+         </div>
+         <div class="copy_txt">
+            <p>
+               주소 : 서울시 강남구 논현로 508(역삼동 679번지 GS타워) | 대표이사 : 허연수 | 사업자등록번호 : 116-81-18745
+            </p>
+            <!--						<p>
+               footer.copy.txt2</p> 2022-08-01 삭제 -->
+            <p>Copyright 2015 GSRetail. Co. Ltd., ALL Right Reserved.</p>
+         </div>
+      </div>
+      <!-- 2015-09-02 수정 -->
+      <ul class="ft_banner">
+         <!-- 2018-09-04 추가 -->
+         <li><img src="http://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/mark03.gif" alt="고객만족 경영 명예의 전당 헌액"></li>
+         <li><img src="http://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/mark04.gif" alt="한국서비스대상 종합유통부문 종합대상 5회"></li>
+         <li><img src="http://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/mark05.gif" alt="GS25 편의점부문 1위,GS수퍼 대형슈퍼마켓 부문 1위"></li>
+         <!-- //2018-09-04 추가 -->
+         <li><img src="http://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/mark06.gif" alt="2019 코스피 마켓리더 브랜드 TOP 20 선정"></li>
+         <!-- 2019-08-26 추가 -->			
+      </ul>
+      <!-- //2015-09-02 수정 -->					
+   </div>
+</div> 
+<script type="text/javascript">
+      //<![CDATA[
+
+      //1:1 문의 페이지 이동
+      $.goMantoMan = function(){
+         if("gsretail" == "gscvs"){
+            location.href="http://www.gsretail.com/gsretail/ko/customer-satisfaction/submain";
+         } else if("gscvs" == "gscvs"){
+            location.href="http://www.gsretail.com/gsretail/ko/customer-satisfaction/mantomancnsoundgs25form";
+         } else if("gssuper" == "gscvs"){
+            location.href="http://www.gsretail.com/gsretail/ko/customer-satisfaction/mantomancnsoundgssmform";
+         }
+      };
+
+      //]]>
+</script>
+<div class="layer">	
+   <div class="bg"></div>	
+   <div id="layerFooter" class="pop-layer">		
+      <div class="popwrap lypop_my2">			
+         <div class="pop_tltwrap">				
+            <h4 class="pop_tlt1">입지제안</h4>		
+         </div>			
+         <div class="pop_cnt">			
+            <div class="all_wrap">					
+               <div class="tblwrap">						
+                  <table class="tbl_ctype2" summary="입지제안의 기준 및 접수처를 확인할 수 있으며 사업부,추천기준,접수처를 제공합니다.">							
+                     <caption>입지제안 안내팝업</caption>							
+                     <colgroup>								
+                        <col style="width:138px">								
+                        <col style="width:285px">								
+                        <col style="width:155px">							
+                     </colgroup>							
+                     <thead>								
+                        <tr>									
+                           <th scope="col">사업부</th>									
+                           <th scope="col">추천 기준</th>									
+                           <th scope="col">접수처</th>								
+                        </tr>							
+                     </thead>							
+                     <tbody>								
+                        <tr>									
+                           <td class="ft_ct">
+                              <img alt="GS25 로고" src="http://hpimg.gsretail.com/_ui/desktop/common/images/gsretail/common/ft_logo_gs25.png">
+                           </td>									
+                           <td>
+                              지역 : 전국
+                              <br>
+                              규모 : 영업면적 10평 이상 임차점포
+                           </td>									
+                           <td style="padding-left:15px;">
+                              <a class="btn onbtn" href="http://gs25.gsretail.com/gscvs/ko/franchise-info/one-on-ones-consult/location-offer" target="_blank" title="새 창" style="padding:10px 10px; margin:0; font-size:13px; background:#666;">입지제안 바로가기</a>
+                           </td>								
+                        </tr>								
+                        <tr>									
+                           <td class="ft_ct">
+                              <img alt="GS수퍼마켓 로고" src="http://hpimg.gsretail.com/_ui/desktop/common/images/gsretail/common/ft_logo_gssuper.png">
+                           </td>									
+                           <td>
+                              지역 : 전국
+                              <br>
+                              규모 : 전용면적 50평 이상
+                           </td>									
+                           <td style="padding-left:15px;">
+                              <a class="btn onbtn" href="https://gsthefresh.gsretail.com/thefresh/ko/franchise-info/one-on-ones-consult/offer-location" target="_blank" title="새 창" style="padding:10px 10px; margin:0; font-size:13px; background:#666;">입지제안 바로가기</a>
+                           </td>								
+                        </tr>	
+                     </tbody>						
+                  </table>					
+               </div>					 
+               <div class="btnwrap">						
+                  <input class="btn sty01 onbtn" type="button" value="확인" onclick="$('#layerFooter').find('.pop_cls a').trigger('click');">					
+               </div>				
+            </div>			
+         </div>			
+         <div class="pop_cls">				
+            <a href="#">닫기</a>			
+         </div>		
+      </div>	
+   </div>	
+   <div class="pop-layer" id="lypop_my11">
+      <div class="popwrap lypop_my1" id="lypop_my11">	
+         <div class="pop_tltwrap">				
+            <h4 class="pop_tlt1">상품 입점 제안</h4>	
+         </div>			
+         <div class="pop_cnt">				
+            <div class="pop_tblwrap">					
+               <div class="pop_box2 w370">						
+                  <div class="pop_txt1">							
+                     <p>
+                        상품 입점 제안의 경우 이메일로 받고 있으며,
+                        <br>
+                        별도의 입점 제안 양식 없이 
+                        <br>
+                        회사 소개서, 상품 소개서 등 구비하신 내용을 
+                        <br>
+                        아래 메일 주소로 전달해주시면 됩니다.
+                     </p>
+                     <p>
+                        <strong class="ft_pink">product@watsons.co.kr</strong>
+                     </p>						
                   </div>	
-                  <div class="pop-layer" id="lypop_my11">
-                     <div class="popwrap lypop_my1" id="lypop_my11">	
-                        <div class="pop_tltwrap">				
-                           <h4 class="pop_tlt1">상품 입점 제안</h4>	
-                        </div>			
-                        <div class="pop_cnt">				
-                           <div class="pop_tblwrap">					
-                              <div class="pop_box2 w370">						
-                                 <div class="pop_txt1">							
-                                    <p>
-                                       상품 입점 제안의 경우 이메일로 받고 있으며,
-                                       <br>
-                                       별도의 입점 제안 양식 없이 
-                                       <br>
-                                       회사 소개서, 상품 소개서 등 구비하신 내용을 
-                                       <br>
-                                       아래 메일 주소로 전달해주시면 됩니다.
-                                    </p>
-                                    <p>
-                                       <strong class="ft_pink">product@watsons.co.kr</strong>
-                                    </p>						
-                                 </div>	
-                                 <div class="pop_txt3" style="font-size:12px;">							
-                                    *  담당 카테고리 MD 검토 후 순차적으로 피드백을 드리고 있어, 평균적으로
-                                    <br>
-                                    &nbsp;&nbsp;2주~4주 정도의 시간이 소요되는 점 참고바랍니다.						
-                                 </div>						
-                                 <div class="btnwrap pb10">							
-                                    <input type="button" value="확인" class="btn sty01 onbtn" onclick="$.closePopFooter('lypop_my11');">						
-                                 </div>					
-                              </div>				
-                           </div>			
-                        </div>			
-                        <div class="pop_cls">				
-                           <a href="#">닫기</a>			
-                        </div>		
-                     </div>	
-                  </div>    
-                  <div id="layerFooter-email" class="pop-layer">      
-                     <div class="popwrap lypop_my1">      		
-                        <div class="pop_tltwrap">      			
-                           <h4 class="pop_tlt1">이메일주소 무단수집 거부</h4>      		
-                        </div>      		
-                        <div class="pop_cnt">      			
-                           <div class="all_wrap">      				
-                              <div class="pop_box4">      					
-                                 본 웹사이트에 게시된 이메일 주소가 전자우편 수집
-                                 <br>      					
-                                 프로그램이나 그밖의 기술적 장치를 이용하여 무단으로
-                                 <br>      	
-                                 수집되는 것을 거부하며, 이를 위반시 정보통신망법에 의해
-                                 <br>      					
-                                 형사 처벌됨을 유념하시기 바랍니다.      				
-                              </div>      				
-                              <div class="pop_txt2">※ 게시일 2003년 3월 24일</div>      				
-                              <div class="btnwrap">      					
-                                 <input class="btn sty01 onbtn" type="button" value="확인" onclick="$.closePopFooter('layerFooter-email');">      				
-                              </div>      			
-                           </div>      		
-                        </div>      		
-                        <div class="pop_cls">      			
-                           <a href="#">닫기</a>      		
-                        </div>      	
-                     </div>     	
+                  <div class="pop_txt3" style="font-size:12px;">							
+                     *  담당 카테고리 MD 검토 후 순차적으로 피드백을 드리고 있어, 평균적으로
+                     <br>
+                     &nbsp;&nbsp;2주~4주 정도의 시간이 소요되는 점 참고바랍니다.						
+                  </div>						
+                  <div class="btnwrap pb10">							
+                     <input type="button" value="확인" class="btn sty01 onbtn" onclick="$.closePopFooter('lypop_my11');">						
+                  </div>					
+               </div>				
+            </div>			
+         </div>			
+         <div class="pop_cls">				
+            <a href="#">닫기</a>			
+         </div>		
+      </div>	
+   </div>    
+   <div id="layerFooter-email" class="pop-layer">      
+      <div class="popwrap lypop_my1">      		
+         <div class="pop_tltwrap">      			
+            <h4 class="pop_tlt1">이메일주소 무단수집 거부</h4>      		
+         </div>      		
+         <div class="pop_cnt">      			
+            <div class="all_wrap">      				
+               <div class="pop_box4">      					
+                  본 웹사이트에 게시된 이메일 주소가 전자우편 수집
+                  <br>      					
+                  프로그램이나 그밖의 기술적 장치를 이용하여 무단으로
+                  <br>      	
+                  수집되는 것을 거부하며, 이를 위반시 정보통신망법에 의해
+                  <br>      					
+                  형사 처벌됨을 유념하시기 바랍니다.      				
+               </div>      				
+               <div class="pop_txt2">※ 게시일 2003년 3월 24일</div>      				
+               <div class="btnwrap">      					
+                  <input class="btn sty01 onbtn" type="button" value="확인" onclick="$.closePopFooter('layerFooter-email');">      				
+               </div>      			
+            </div>      		
+         </div>      		
+         <div class="pop_cls">      			
+            <a href="#">닫기</a>      		
+         </div>      	
+      </div>     	
+   </div>
+</div>
+</div>
+<!-- //footer -->
+<div class="popup-outer-layer">
+   <div class="bg"></div>
+   <!-- id중복확인 팝업 시작 -->
+   <div class="popwrap lypop_my2 pop-inner-layer" id="jungdoPop">
+      <style type="text/css"> 
+      .pop_cnt .system { width:570px; margin:0 auto; font-family: "NanumBarunGothic", NanumBarunGothic,"돋움",Dotum, Arial,sans-serif;}
+      .pop_cnt .system .txt01 { font-size:16px !important; line-height: 22px;}
+      .pop_cnt .system .box { text-align:center; background:#fbfbfb; border:1px solid #dfdfdf; margin:19px 0; padding:20px 70px;}
+      .pop_cnt .system .box .inner > p { text-align:left; line-height:22px;}
+      .pop_cnt .system .box .inner .btnwrap { padding-top:15px !important;}
+      .pop_cnt .system .col_section { width:590px; overflow:hidden; margin-bottom:23px;}
+      .pop_cnt .system .col_section .line { position:relative; float:left; height:210px;}
+      .pop_cnt .system .col_section .line.order01 { border-right:1px solid #dfdfdf; padding-right:15px;}
+      .pop_cnt .system .col_section .line.order02 { border-right:1px solid #dfdfdf; padding:0 15px;}
+      .pop_cnt .system .col_section .line.order03 { padding:0 15px;}
+      .pop_cnt .system .col_section .line .tit { font-size:18px; font-weight:bold; color:#000; margin-bottom:20px; text-align:center;}
+      .pop_cnt .system .col_section .line span { line-height:22px;}
+      .pop_cnt .system .col_section .line.order01 .btnwrap {position:absolute; left:20px; bottom:0;}
+      .pop_cnt .system .col_section .line.order02 .btnwrap {position:absolute; left:50px; bottom:0;}
+      .pop_cnt .system .col_section .line.order03 .btnwrap {position:absolute; left:38px; bottom:0;}
+      </style> 
+      <div class="pop_tltwrap">
+         <h4 class="pop_tlt1 dot">제보대상, 제보자 포상/비밀번호 제도 및 고충처리제도 안내</h4>
+      </div>
+      <div class="pop_cnt">
+         <div class="system">
+            <strong class="txt01">
+               <span class="ft_org">GS리테일 임직원 및 파트너사의 부정/불공정 행위 제보와 개선제안</span>
+               에 대한 의견을
+               <br>
+                  쓰는 곳입니다. 아래 각 메뉴별 안내사항을 참고 하셔서 작성하여 주시기 바랍니다.
+            </strong>
+            <div class="box">
+               <div class="inner">
+                  <p>
+                     GS25/GS THE FRESH 이용 중 고객불만/불편/칭찬사항은 "고객센터 &gt; 고객의 소리" 
+                     <br>
+                     <!-- 2019_GSTHEFRESH_로고변경 -->
+                        코너에 접수 하시면 관련부서에서 신속히 처리가 됩니다.
+                  </p>
+                  <div class="btnwrap">
+                     <a href="/gscvs/ko/customer-satisfaction/submain" class="btn_arr pt2">고객의 소리 바로가기</a>
                   </div>
                </div>
             </div>
-            <!-- //footer -->
-            <div class="popup-outer-layer">
-               <div class="bg"></div>
-               <!-- id중복확인 팝업 시작 -->
-               <div class="popwrap lypop_my2 pop-inner-layer" id="jungdoPop">
-                  <style type="text/css"> 
-                  .pop_cnt .system { width:570px; margin:0 auto; font-family: "NanumBarunGothic", NanumBarunGothic,"돋움",Dotum, Arial,sans-serif;}
-                  .pop_cnt .system .txt01 { font-size:16px !important; line-height: 22px;}
-                  .pop_cnt .system .box { text-align:center; background:#fbfbfb; border:1px solid #dfdfdf; margin:19px 0; padding:20px 70px;}
-                  .pop_cnt .system .box .inner > p { text-align:left; line-height:22px;}
-                  .pop_cnt .system .box .inner .btnwrap { padding-top:15px !important;}
-                  .pop_cnt .system .col_section { width:590px; overflow:hidden; margin-bottom:23px;}
-                  .pop_cnt .system .col_section .line { position:relative; float:left; height:210px;}
-                  .pop_cnt .system .col_section .line.order01 { border-right:1px solid #dfdfdf; padding-right:15px;}
-                  .pop_cnt .system .col_section .line.order02 { border-right:1px solid #dfdfdf; padding:0 15px;}
-                  .pop_cnt .system .col_section .line.order03 { padding:0 15px;}
-                  .pop_cnt .system .col_section .line .tit { font-size:18px; font-weight:bold; color:#000; margin-bottom:20px; text-align:center;}
-                  .pop_cnt .system .col_section .line span { line-height:22px;}
-                  .pop_cnt .system .col_section .line.order01 .btnwrap {position:absolute; left:20px; bottom:0;}
-                  .pop_cnt .system .col_section .line.order02 .btnwrap {position:absolute; left:50px; bottom:0;}
-                  .pop_cnt .system .col_section .line.order03 .btnwrap {position:absolute; left:38px; bottom:0;}
-                  </style> 
-                  <div class="pop_tltwrap">
-                     <h4 class="pop_tlt1 dot">제보대상, 제보자 포상/비밀번호 제도 및 고충처리제도 안내</h4>
+            <div class="col_section">
+               <div class="line order01">
+                  <p class="tit">정도경영 목소리</p>
+                  <span>
+                     임직원/파트너사 등 부정/불공정
+                     <br>
+                        사항 제보
+                     <br> 
+                     <!-- 2016-01-06 수정 -->
+                        ⇒ 조사부서(경영진단팀) 제보
+                  </span>
+                  <div class="btnwrap bottom">
+                     <a href="/gscvs/ko/customer-satisfaction/precisioncnsoundform" class="btn sty04 onbtn">문의하기</a>
+                     <!-- 2015-09-01 수정 -->
                   </div>
-                  <div class="pop_cnt">
-                     <div class="system">
-                        <strong class="txt01"><span class="ft_org">GS리테일 임직원 및 파트너사의 부정/불공정 행위 제보와 개선제안</span>에 대한 의견을<br>
-                        쓰는 곳입니다. 아래 각 메뉴별 안내사항을 참고 하셔서 작성하여 주시기 바랍니다.
-                        </strong>
-                        <div class="box">
-                           <div class="inner">
-                              <p>GS25/GS THE FRESH 이용 중 고객불만/불편/칭찬사항은 "고객센터 &gt; 고객의 소리" <br><!-- 2019_GSTHEFRESH_로고변경 -->
-                              코너에 접수 하시면 관련부서에서 신속히 처리가 됩니다.</p>
-                              <div class="btnwrap">
-                                 <a href="/gscvs/ko/customer-satisfaction/submain" class="btn_arr pt2">고객의 소리 바로가기</a>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col_section">
-                           <div class="line order01">
-                              <p class="tit">정도경영 목소리</p>
-                              <span>임직원/파트너사 등 부정/불공정<br>
-                                 사항 제보<br> <!-- 2016-01-06 수정 -->
-                                 ⇒ 조사부서(경영진단팀) 제보
-                              </span>
-                              <div class="btnwrap bottom">
-                                 <a href="/gscvs/ko/customer-satisfaction/precisioncnsoundform" class="btn sty04 onbtn">문의하기</a><!-- 2015-09-01 수정 -->
-                              </div>
-                           </div>
-                           <div class="line order02">
-                              <p class="tit">CEO에게 말한다</p>
-                              <span>임직원/파트너사 등 부정/불공정<br>사항 제보, 칭찬사례/기타 <br>
-                                    CEO에게 직접 건의 하고 싶은<br>사항 등 ⇒ CEO에게 직접 제보
-                              </span>
-                              <div class="btnwrap bottom">
-                                 <a href="/gscvs/ko/customer-satisfaction/toceocnsoundform" class="btn sty04 onbtn">문의하기</a><!-- 2015-09-01 수정 -->
-                              </div>
-                           </div>
-                           <div class="line order03">
-                              <p class="tit">파트너사 목소리</p>
-                              <span>거래상 애로(고충)/개선요청<br>사항 제안(불공정 제외)<br>
-                              ⇒ 담당부서(경영진단팀)에서<br> 즉시 확인 후, 제안사항에 대한<br>
-                              개선계획 수립 및 회신
-                              </span>
-                              <div class="btnwrap bottom">
-                                 <a href="/gscvs/ko/customer-satisfaction/partnercnsoundform" class="btn sty04 onbtn">문의하기</a><!-- 2015-09-01 수정 -->
-                              </div>
-                           </div>
-                        </div>
-                        <p class="mt20 ft_org">
-                        ※ GS리테일에서는 『<a href="http://www.gsretail.com/gsretail/ko/corporation/jeongdo-management/system/rewards"><span class="ft_blue ft_ud">제보자
-                           포상제도</span></a> 』를 실시하며, 『<a href="http://www.gsretail.com/gsretail/ko/corporation/jeongdo-management/system/rewards?id=cusl_tab2"><span class="ft_blue ft_ud">
-                           제보자 보호제도</span></a>』 를 운영합니다. <!-- 2016-01-06 수정 -->
-                        </p>
-                        <div class="pop_cls">
-                           <a href="#">닫기</a>
-                        </div>
-                     </div>
-                  </div>		
                </div>
-               
-               <div class="popwrap lypop_my2 pop-inner-layer" id="superQrPop" style="width:400px;">
-                  <div class="pop_tltwrap">
-                     <h4 class="pop_tlt1">GS수퍼마켓 앱 다운로드</h4>
+               <div class="line order02">
+                  <p class="tit">CEO에게 말한다</p>
+                  <span>임직원/파트너사 등 부정/불공정<br>사항 제보, 칭찬사례/기타 <br>
+                        CEO에게 직접 건의 하고 싶은<br>사항 등 ⇒ CEO에게 직접 제보
+                  </span>
+                  <div class="btnwrap bottom">
+                     <a href="/gscvs/ko/customer-satisfaction/toceocnsoundform" class="btn sty04 onbtn">문의하기</a>
+                     <!-- 2015-09-01 수정 -->
                   </div>
-                  <div class="pop_cnt" tabindex="0" style="padding:0; margin:0; overflow-y:hidden; height:570px;">
-                     <div class="all_wrap" style="padding:0;">
-                        <img alt="결제+할인+적립을 QR하나로 간편하게! 한 번에 되는 GS수퍼마켓만의 스마트한 앱! QR찍고 앱 설치하세요!" src="http://hpimg.gsretail.com/_ui/desktop/common/images/gssuper/main/btm_super_app.jpg">
-                     </div>
-                  </div>
-                  <div class="pop_cls"><a href="#">닫기</a>
+               </div>
+               <div class="line order03">
+                  <p class="tit">파트너사 목소리</p>
+                  <span>
+                     거래상 애로(고충)/개선요청
+                     <br>
+                     사항 제안(불공정 제외)
+                     <br>
+                        ⇒ 담당부서(경영진단팀)에서
+                     <br> 
+                        즉시 확인 후, 제안사항에 대한
+                     <br>
+                        개선계획 수립 및 회신
+                  </span>
+                  <div class="btnwrap bottom">
+                     <a href="/gscvs/ko/customer-satisfaction/partnercnsoundform" class="btn sty04 onbtn">문의하기</a>
+                     <!-- 2015-09-01 수정 -->
                   </div>
                </div>
             </div>
+            <p class="mt20 ft_org">
+               ※ GS리테일에서는 『
+               <a href="http://www.gsretail.com/gsretail/ko/corporation/jeongdo-management/system/rewards">
+                  <span class="ft_blue ft_ud">제보자 포상제도</span>
+               </a> 
+               』 를 실시하며, 『
+            <a href="http://www.gsretail.com/gsretail/ko/corporation/jeongdo-management/system/rewards?id=cusl_tab2">
+               <span class="ft_blue ft_ud">제보자 보호제도</span>
+            </a>
+               』 를 운영합니다. 
+               <!-- 2016-01-06 수정 -->
+            </p>
+            <div class="pop_cls">
+               <a href="#">닫기</a>
+            </div>
+         </div>
+      </div>		
+   </div>
+   <div class="popwrap lypop_my2 pop-inner-layer" id="superQrPop" style="width:400px;">
+      <div class="pop_tltwrap">
+         <h4 class="pop_tlt1">GS수퍼마켓 앱 다운로드</h4>
+      </div>
+      <div class="pop_cnt" tabindex="0" style="padding:0; margin:0; overflow-y:hidden; height:570px;">
+         <div class="all_wrap" style="padding:0;">
+            <img alt="결제+할인+적립을 QR하나로 간편하게! 한 번에 되는 GS수퍼마켓만의 스마트한 앱! QR찍고 앱 설치하세요!" src="http://hpimg.gsretail.com/_ui/desktop/common/images/gssuper/main/btm_super_app.jpg">
+         </div>
+      </div>
+      <div class="pop_cls">
+         <a href="#">닫기</a>
+      </div>
+   </div>
+</div>
+</div>
                                             
