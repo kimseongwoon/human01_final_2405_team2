@@ -66,7 +66,7 @@ ul, ol, li {
 }
 
 .lctwrap .lct > li > a.home {
-    background: url(/_ui/desktop/common/images/gsretail/common/icon_nav.png) no-repeat;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gsretail/common/icon_nav.png) no-repeat;
     background-position: 0 0;
     text-indent: -999em;
     width: 16px;
@@ -85,16 +85,6 @@ ul, ol, li {
     z-index: 100;
 }
 
-.lctwrap .lct > li {
-    position: relative;
-    float: left;
-    display: inline-block;
-    background: url(/_ui/desktop/common/images/gsretail/common/icon_nav.png) no-repeat;
-    background-position: 0 -51px;
-    height: 48px;
-    padding-left: 20px;
-}
-
 a {
     color: #333;
     text-decoration: none;
@@ -102,7 +92,7 @@ a {
 
 .lctwrap .lct .lct_op {
     display: inline-block;
-    background: url(/_ui/desktop/common/images/gsretail/common/icon_nav.png) no-repeat;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gsretail/common/icon_nav.png) no-repeat;
     background-position: 10px -118px;
     text-indent: -999em;
     width: 20px;
@@ -206,7 +196,7 @@ a {
     display: block;
     width: 40px;
     height: 40px;
-    background: url(/_ui/desktop/common/images/gsretail/common/icon_nav.png) no-repeat;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gsretail/common/icon_nav.png) no-repeat;
 }
 
 .cnt_top:after {
@@ -214,10 +204,6 @@ a {
     display: block;
     visibility: hidden;
     clear: both;
-}
-
-.cnt_topwrap {
-    border-bottom: 1px solid #dfdfdf;
 }
 
 element.style {
@@ -242,16 +228,6 @@ element.style {
     padding: 20px 0px 20px 37px;
     color: #fff;
     font-size: 18px;
-}
-
-h4 {
-    display: block;
-    margin-block-start: 1.33em;
-    margin-block-end: 1.33em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    unicode-bidi: isolate;
 }
 
 .popwrap .pop_cnt {
@@ -456,7 +432,7 @@ md_controller .btn.stop {
     width: 45px;
     height: 45px;
     margin-bottom: 10px;
-    background: url(/_ui/desktop/common/images/gscvs/products/flag_bg.png) -65px 0 no-repeat;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/products/flag_bg.png) -65px 0 no-repeat;
     font-size: 18px;
     color: #fff;
     text-align: center;
@@ -521,13 +497,14 @@ legend {
 .pro_schwrap .sch_ip > div {
     width: 845px;
     margin: 0 auto;
+    display: flex;
 }
 
 .pro_schwrap label {
     padding: 10px 10px 10px 40px;
     font-size: 15px;
     color: #444;
-    background: url(/_ui/desktop/common/images/gscvs/franchise/icon_faq.png) 0px -154px no-repeat;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/franchise/icon_faq.png) 0px -154px no-repeat;
 }
 
 .pro_schwrap .sch_ip .ipt_typ01 {
@@ -615,8 +592,16 @@ address, caption, cite, code, dfn, em, strong, th, var {
     z-index: 0;
 }
 
-.myptab.typ3 > li > span a {
-    width: 239px;
+.myptab > li > span.active {
+    z-index: 1;
+}
+
+.invisible {
+    position: absolute;
+    text-indent: -5000px;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
 }
 
 .myptab > li > span a {
@@ -632,13 +617,9 @@ address, caption, cite, code, dfn, em, strong, th, var {
     z-index: 0;
 }
 
-.myptab > li > span.active {
-    z-index: 1;
-}
-
 .myptab > li > span.active a, .myptab > li > span a:hover, .myptab > li > span a:active, .myptab > li > span a:focus {
     display: block;
-    /*width: 136px;*/
+    width: 136px;
     padding: 15px 0 15px;
     text-align: center;
     font-size: 15px;
@@ -652,12 +633,8 @@ address, caption, cite, code, dfn, em, strong, th, var {
     z-index: 1;
 }
 
-.invisible {
-    position: absolute;
-    text-indent: -5000px;
-    height: 0;
-    line-height: 0;
-    overflow: hidden;
+.myptab.typ3 > li > span a {
+    width: 239px;
 }
 
 .tblwrap {
@@ -739,7 +716,7 @@ address, caption, cite, code, dfn, em, strong, th, var {
     width: 45px;
     height: 45px;
     margin-bottom: 10px;
-    background: url(/_ui/desktop/common/images/gscvs/products/flag_bg.png) 0 0 no-repeat;
+    background: url(http://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/products/flag_bg.png) 0 0 no-repeat;
     font-size: 18px;
     color: #fff;
     text-align: center;
@@ -781,7 +758,13 @@ address, caption, cite, code, dfn, em, strong, th, var {
     display: inline-block;
     height: 11px;
     text-indent: -999em;
-    background: url(/_ui/desktop/common/images/gscvs/common/icon_paging.png) no-repeat;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/icon_paging.png) no-repeat;
+}
+
+.paging .prev {
+    left: 47px;
+    width: 45px;
+    background-position: 0 0;
 }
 
 .paging .num a:hover, .paging .num a.on {
@@ -840,6 +823,11 @@ element.style {
     height: 60px;
 }
 
+.ft .ft_menu li:first-child a {
+    background: none;
+    padding-left: 0;
+}
+
 .ft .ft_menu li a {
     color: #333;
     background: url(/_ui/desktop/common/images/gscvs/common/bg_sns.gif) no-repeat top left;
@@ -851,6 +839,10 @@ element.style {
     display: block;
     visibility: hidden;
     clear: both;
+}
+
+.ft .ret_link dl {
+    float: left;
 }
 
 .ft .family {
@@ -869,12 +861,12 @@ element.style {
 
 .topwrap {
     width: 100%;
-    background: url(/_ui/desktop/common/images/gscvs/common/top_bg.gif) repeat-x left 40px;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/top_bg.gif) repeat-x left 40px;
 }
 
 .brdwrap .brd {
     float: left;
-    background: url(/_ui/desktop/common/images/gscvs/common/menu_brd.gif) no-repeat;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/menu_brd.gif) no-repeat;
     width: 404px;
     height: 43px;
     margin-top: 40px;
@@ -1027,7 +1019,7 @@ element.style {
 
 .gnbwrap .logo {
     float: left;
-    background: url(/_ui/desktop/common/images/gscvs/common/logo.gif) no-repeat;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/logo.gif) no-repeat;
     width: 170px;
     height: 46px;
     text-indent: -999em;
@@ -1163,7 +1155,7 @@ element.style {
     position: relative;
     z-index: 7777;
     display: block;
-    background: url(/_ui/desktop/common/images/gscvs/common/icon_lang.png) no-repeat;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/icon_lang.png) no-repeat;
     background-position: right 1px;
     padding-right: 18px;
 }
@@ -1172,7 +1164,7 @@ element.style {
     position: absolute;
     top: -9px;
     left: 0;
-    background: url(/_ui/desktop/common/images/gscvs/common/lang_bg.png) no-repeat;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/lang_bg.png) no-repeat;
     width: 153px;
     height: 112px;
     z-index: 6666;
@@ -1273,7 +1265,7 @@ element.style {
 .gnbwrap .gnb {
     float: left;
     margin: 0 auto;
-    width: 780px;
+    width: 1000px;
 }
 
 element.style {
@@ -1317,7 +1309,7 @@ element.style {
     display: block;
     width: 39px;
     height: 39px;
-    background: url(/_ui/desktop/common/images/gscvs/main/ico_btm_sns.png) no-repeat left center;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/main/ico_btm_sns.png) no-repeat left center;
 }
 
 .btm_sns_area {
@@ -1368,7 +1360,7 @@ element.style {
 .ft .family dt span, .ft .brand dt span {
     float: right;
     width: 100%;
-    background: url(/_ui/desktop/common/images/gscvs/common/ico_style.png) no-repeat;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/ico_style.png) no-repeat;
     background-position: -28px 0px;
     text-indent: -999em;
     font-size: 0px;
@@ -1382,7 +1374,7 @@ element.style {
     height: 25px;
     line-height: 25px;
     padding: 0 0 0 16px;
-    background: url(/_ui/desktop/common/images/gscvs/common/icon_ft.png) no-repeat;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/icon_ft.png) no-repeat;
     background-position: 141px 5px;
     margin-left: 2px;
 }
@@ -1451,7 +1443,7 @@ element.style {
 
 .lctwrap .lct .lct_lst {
     display: inline-block;
-    background: url(/_ui/desktop/common/images/gsretail/common/icon_nav.png) no-repeat;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gsretail/common/icon_nav.png) no-repeat;
     background-position: 6px -168px;
     text-indent: -999em;
     width: 20px;
@@ -1533,7 +1525,7 @@ element.style {
 
 .copy .copy_menu li a {
     padding: 0 8px;
-    background: url(/_ui/desktop/common/images/gscvs/common/bg_sns.gif) no-repeat center left;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/bg_sns.gif) no-repeat center left;
 }
 
 .copy .copy_menu li:first-child a {
@@ -1786,7 +1778,7 @@ element.style {
     background-color: hsl(0, 0%, 90%);
 }
 
-img[Attributes Style] {
+img[Attributes Style {
     width: 217px;
     aspect-ratio: auto 217 / 55;
     height: 55px;
@@ -1794,4 +1786,24 @@ img[Attributes Style] {
 
 head {
     display: none;
+}
+
+.noti_add0818 {
+    position: absolute;
+    right: 0;
+    top: -33px;
+    color: #397ca8;
+    font-size: 14px;
+}
+
+.paging .prev {
+    left: 47px;
+    width: 45px;
+    background-position: 0 0;
+}
+
+.cntwrap {
+    width: 100%;
+    margin: auto;
+    border-top: 1px solid #dfdfdf;
 }
