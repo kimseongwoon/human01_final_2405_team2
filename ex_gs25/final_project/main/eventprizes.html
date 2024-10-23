@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/gs25.css" />
     <script src="../js/search.js"></script>
+    <link rel="stylesheet" href="../main/2+1event.html" />
 </head>
 
 <header>
@@ -75,6 +76,7 @@
                <ul>
                   <li>
                      <div class="cpmenu_vt">
+                        <img src="https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/menu_brd.gif">
                         <h3>GS리테일</h3>
                         <ul>
                            <li><a href="http://www.gsretail.com/gsretail/ko/corporation/about-gs-retail/philosophy">경영이념</a></li>
@@ -190,26 +192,10 @@
 
 <!-- url 선언 -->
 <!-- 당첨자발표 -->
-<script type="text/javascript">
-//<![CDATA[
-
-
-$(document).ready(function(){
-   var gscvsGNB = new GNBController;
-   gscvsGNB.init( ".gnbw .gnb", ".gnb ul li h2 a", ".gnb ul.mlb_action", ".gnb_bg");
-});
-
-//]]>
-</script>
-<body style="margin: 0px; height: 100%; background-color: blue(14, 14, 14);">
-   <img style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);" 
-   src="https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/top_bg.gif">
-</body>
-
+<body style="margin: 0px; height: 100%; background-color: blue(14, 14, 14);"></body>
 <div class="gnbw">
 <h1 class="logo">
    <a href="/gscvs/ko/main">GS25</a>
-   <img src="http://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/logo.gif">
 </h1>   
 <!-- 2023-10-01 : 10월 GS25홈페이지 로고 한글 버전 적용 관련 건 Start-->
 <!-- 2023-10-01 : 10월 GS25홈페이지 로고 한글 버전 적용 관련 건 End-->
@@ -634,213 +620,34 @@ $(document).ready(function(){
       </div>
       <!-- //topwrap -->
    </div>
-</header>
-   <div id="breadcrumb" class="breadcrumb">
-		<script type="text/javascript">
-//<![CDATA[
-
-var bookObj = {
-		formName : "bookmarkForm",
-		loginChk : function(){
-			var isLogin = "false";
-			if (isLogin == "true") {
-				bookObj.setFormInformation();
-			} else {
-				commonScriptController.addCommonLayerBg();
-				commonScriptController.showCommonLayerBg();
-				commonScriptController.showCommonPopup($("#lypop_my1"), 1000);
-			}
-		},
-		popupClose : function() {
-			commonScriptController.closeCommonLayerBg();
-			commonScriptController.closeCommonPopup($("#lypop_my1"));
-		},
-		loginMove : function() {
-			location.href = "/gscvs/ko/sign-up/login";
-		},
-		setFormInformation : function(){
-
-			if($("#bookMarkListBox > li").size() == 8) {
-				alert("즐겨찾기 메뉴는 최대 8개까지 등록 가능합니다.");
-				return false;
-			}
-
-			$( "#" + bookObj.formName ).remove();
-			var tFormHTML = "<form name='" + bookObj.formName + "' id='" + bookObj.formName + "'>\n";
-			tFormHTML += "<input type='hidden' name='pageId' id='pageId' value='event-goods-Page'/>\n";
-			tFormHTML += "<input type='hidden' name='dataType' id='dataType' value='I'/>\n";
-			tFormHTML += "</form>\n";
-			$("body").append( tFormHTML );
-			bookObj.setData();
-		},
-		setData : function(){
-			var tUrl = "/gscvs/ko/gscommon/set-bookmark";
-
-			$.ajax({
-				type : "post",
-				url : tUrl + "?" + bookObj.getCSRFToken(),
-				data : $("form#" + bookObj.formName ).serialize(),
-				dataType : "json",
-				error : function( request, status, error ){
-					console.log( "code:" + request.status+"\n" + "message:" + request.responseText+"\n" + "error:" + error );
-				},
-				success : function(result){
-					var resultCode = JSON.parse(result);
-
-					var bookMarkHtml = "";
-
-					if(resultCode.length == 1) {
-						bookMarkHtml = "<p class='menu_tit'>나만의 메뉴</p>";
-						bookMarkHtml += "<ul class='menu_lst' id='bookMarkListBox'>";
-						bookMarkHtml += "<li id='bookMarkList_0'><div class='menu_cnt'><a href='"+resultCode[0].BookMarkAddress+"'>"+resultCode[0].PageName+"</a></div><div class='menu_del'><a href=\"javascript:bookMenuObj.setFormInformation(\'"+resultCode[0].pk+"\', \'bookMarkList_0\', \'"+resultCode[0].PageID+"\');\">삭제</a></div></li> \n";
-						bookMarkHtml += "</ul>";
-						bookMarkHtml += "<div class='ctr'><a href='#;' class='prev'>이전 나만의메뉴</a><a href='#;' class='next'>다음 나만의 메뉴</a></div>";						
-						$("#bookMarkListBoxTop").html(bookMarkHtml);
-					} else {
-						for(var i = 0; i < resultCode.length; i++) {
-							bookMarkHtml += "<li id='bookMarkList_"+i+"'><div class='menu_cnt'><a href='"+resultCode[i].BookMarkAddress+"'>"+resultCode[i].PageName+"</a></div><div class='menu_del'><a href='javascript:bookMenuObj.setFormInformation(\'"+resultCode[i].pk+"\', \'bookMarkList_"+i+"\', \'"+resultCode[i].PageID+"\');'>삭제</a></div></li> \n";
-						}
-						$("#bookMarkListBox").html(bookMarkHtml);
-						bookMenuObj.setMoveHTML();
-					}
-
-					$("#bookMarkBtn").attr("href", "#;").addClass("on");
-					bookObj.getData();
-					alert("즐겨찾기에 등록되었습니다.");
-				}
-			});
-		},
-		getData : function(){
-			var tUrl = "/gscvs/ko/gscommon/set-bookmark";
-			$("#dataType").val("S");
-
-			$.ajax({
-				type : "post",
-				url : tUrl + "?" + bookObj.getCSRFToken(),
-				data : $("form#" + bookObj.formName ).serialize(),
-				dataType : "json",
-				error : function( request, status, error ){
-					console.log( "code:" + request.status+"\n" + "message:" + request.responseText+"\n" + "error:" + error );
-				},
-				success : function(result){
-					var resultCode = JSON.parse(result);
-					
-					var bookMarkHtml = "";
-					for(var i = 0; i < resultCode.length; i++) {
-						bookMarkHtml += "<li id='bookMarkList_"+i+"'><div class='menu_cnt'><a href='"+resultCode[i].BookMarkAddress+"'>"+resultCode[i].PageName+"</a></div><div class='menu_del'><a href=\"javascript:bookMenuObj.setFormInformation(\'"+resultCode[i].pk+"\', \'bookMarkList_"+i+"\', \'"+resultCode[i].PageID+"\');\">삭제</a></div></li> \n";						
-					}
-					$("#bookMarkListBox").html(bookMarkHtml);
-					bookMenuObj.setMoveHTML();
-				}
-			});
-		},
-		getCSRFToken : function(){
-			return "CSRFToken="+$("[name='CSRFToken']").val();
-	 	}
-}
-
-
-var naviListController = function(){
-	this._FONT_SIZE = -1;
-	this._NAVI_INFO = [];
-	this._MOTION_TIME = 0.4;
-	this._UL_STR = ".lctwrap ul.lct > li .lct_ly";
-	this._LI_STR = ".lctwrap ul.lct > li";
-	this._OPEN_MENU = -1;
-	this._MENU_TAB_WIDTH = 80;
-	this.init = function(){
-		var tThis = this;
-		var arrAfterWidth = [];
-		var beforeWidth = 0;
-		this._FONT_SIZE = parseInt( $( this._UL_STR + " ul li a" ).css( "font-size" ) );
-		$( ".lctwrap ul.lct > li > .menuArea" ).each(function() {
-			$(this).data("areaWidth", parseInt($(this).parent().find("div.lct_ly").css("width")));
-			$(this).on("click", function() {
-					tThis.bindExplosureMenu($(this));
-			});
-		});
-	};
-	this.bindExplosureMenu = function($clickMenu) {
-		if("none" == $clickMenu.parent().find("div.lct_ly").css("display")) {
-			this.showMenu($clickMenu);
-		} else {
-			this.hideMenu($clickMenu);
-			this._OPEN_MENU = -1;
-		}
-	};
-	this.showMenu = function($clickMenu) {
-		var tThis = this;
-		if(this._OPEN_MENU != -1 && this._OPEN_MENU != $clickMenu) {
-			tThis.hideMenu(this._OPEN_MENU);
-		}
-		this._OPEN_MENU = $clickMenu;
-		var $clickMenuParent = $clickMenu.parent();
-		$clickMenuParent.css("background" , "none").css("padding-left", "20px");
-		$clickMenuParent.find("div.lct_ly").show();
-		if($clickMenuParent.next()) {
-			$clickMenuParent.next().addClass("selecr_r");
-		}
-
-		var tIcon = this.getIcon( $clickMenu );
-		var gabWidth = 0;
-		var areaWidth = $clickMenu.data("areaWidth");
-
-		TweenMax.set( tIcon, { x:0 } );
-		TweenMax.to( tIcon, 0.2, { x:gabWidth } );
-
-		TweenMax.set( $clickMenuParent.find("div.lct_ly").find( " ul li a" ), { fontSize:parseInt( this._FONT_SIZE / 3 ) + "px" } );
-		TweenMax.to( $clickMenuParent.find("div.lct_ly").find( " ul li a" ), this._MOTION_TIME, { fontSize:( this._FONT_SIZE ) + "px", ease:Power4.easeOut } );
-
-		TweenMax.set( $clickMenuParent.find("div.lct_ly"), { alpha:0, width:areaWidth } ) ;
-		TweenMax.to( $clickMenuParent.find("div.lct_ly"), this._MOTION_TIME, { alpha:1, width:areaWidth+this._MENU_TAB_WIDTH, ease:Power4.easeOut, onComplete:this.showComplete, onCompleteParams:[ $clickMenu ]  } );
-	};
-	this.hideMenu = function($clickMenu) {
-		var $clickMenuParent = $clickMenu.parent();
-		if($clickMenuParent.next()) {
-			$clickMenuParent.next().removeClass("selecr_r");
-		}
-		$clickMenuParent.css("background" , "").css("padding-left", "20px");
-		$clickMenuParent.find("div.lct_ly").show();
-
-		var tIcon = this.getIcon( $clickMenu );
-		var gabWidth = 0;
-		var areaWidth = $clickMenu.data("areaWidth");
-
-		TweenMax.set( tIcon, { x:gabWidth } );
-		TweenMax.to( tIcon, 0.2, { x:0 } );
-
-		TweenMax.set( $clickMenuParent.find("div.lct_ly").find( " ul li a" ), { fontSize:"0" } );
-		TweenMax.set( $clickMenuParent.find("div.lct_ly"), { alpha:1, width:areaWidth+this._MENU_TAB_WIDTH } );
-		TweenMax.to( $clickMenuParent.find("div.lct_ly"), this._MOTION_TIME, { alpha:0, width:0, ease:Power4.easeOut, onComplete:this.hideComplete, onCompleteParams:[ $clickMenu ] });
-	};
-	this.getIcon = function($clickMenu) {
-		var rObj;
-		if($clickMenu.parent().next()) {
-			rObj = $clickMenu.find(".lct_op");
-		} else {
-			rObj = $clickMenu.find(".lct_lst");
-		}
-		return rObj;
-	}
-	this.showComplete = function( $clickMenu ){
-	};
-	this.hideComplete = function( $clickMenu ){
-		$clickMenu.parent().find("div.lct_ly").hide();
-	};
-}
-
-var naviMenu = new naviListController();
-
-$(document).ready(function(){
-
-	naviMenu.init();
-
-
-
-});
-
-//]]>
-</script>
+   <!-- //header -->
+   <div class="popup-outer-layer">
+      <div class="bg"></div>
+   
+      <div class="popwrap lypop_my1 pop-inner-layer" id="moveLoginPage">
+         <div class="pop_tltwrap">
+            <h4 class="pop_tlt1">로그인 안내</h4>
+         </div>
+         <div class="pop_cnt">
+            <div class="pop_tblwrap">
+               <div class="pop_box2 w370">
+                  <div class="pop_txt1">
+                     <p>이 페이지를 이용하기 위해서는<br>로그인이 필요합니다.<br>로그인 후 이용해 주시기 바랍니다.</p>
+                  </div>
+               </div>
+               <div class="btnwrap pb10">
+                  <input type="button" value="로그인 하기" class="btn sty02 bk" onclick="javascript:fn_login();">
+               </div>
+            </div>
+         </div>
+         <div class="pop_cls">
+            <a href="#;" onclick="javascript:fn_login();">닫기</a>
+         </div>
+      </div>
+   </div>
+      <!-- //content Box -->
+      <div class="cntwrap">
+         <div id="breadcrumb" class="breadcrumb">
 
 <!-- navigation -->
 		<div class="cnt_topwrap">
@@ -852,8 +659,11 @@ $(document).ready(function(){
 				 -->
 				<div class="lctwrap">
 					<ul class="lct">
-						<li><a href="/gscvs/ko/main" class="home">홈</a></li>
-						<li><a href="#" class="menuArea" onclick="return false;">
+						<li>
+                     <a href="/gscvs/ko/main" class="home">홈</a>
+                  </li>
+						<li>
+                     <a href="#" class="menuArea" onclick="return false;">
 								<span>상품</span>
 								<span class="lct_op">메뉴열기</span>		 
 							</a>
@@ -992,174 +802,7 @@ $(document).ready(function(){
           <!-- 1+1행사 탭   : ONE_TO_ONE
          2+1행사 탭   : TWO_TO_ONE       
          덤증정행사 탭 : GIFT   		
-         전체 탭       : TOTAL -->        			   																	
-   <script type="text/javascript">
-//<![CDATA[
-
-//상품 검색 조회
-var GoodsPageController = function(index){
-this.getList = function(){		
-var tURL = "/gscvs/ko/products/event-goods-search";
-var tFormHTML = "";		
-tFormHTML += "<input type=\"hidden\" name=\"pageNum\" id=\"pageNum\" value=\"" + this._BOARD_INFO.pageNum + "\"/>";
-tFormHTML += "<input type=\"hidden\" name=\"pageSize\" id=\"pageSize\" value=\"" + this._BOARD_INFO.listCnt + "\"/>";
-tFormHTML += "<input type=\"hidden\" name=\"searchType\" id=\"searchType\" value=\"" + this._BOARD_INFO.searchType + "\"/>";
-tFormHTML += "<input type=\"hidden\" name=\"searchWord\" id=\"searchWord\" value=\"" + this._BOARD_INFO.searchWord + "\"/>";
-var parameterListValue = "ONE_TO_ONE";
-if($("#parameterList").length!=0){
-   parameterListValue = $("#parameterList").val();
-}
-tFormHTML += "<input type=\"hidden\" name=\"parameterList\" id=\"parameterList\" value=\"" + parameterListValue + "\"/>";
-
-
-this.setFormInformation( tFormHTML );		
-this.getData( tURL, this.setResourceList, this ); 
-};
-this.setResourceList = function( result, tThis ){ /////// modify
-
-
-var tData = result;
-tThis._RESOURCE = tData.results;
-tThis._BOARD_INFO.totalCnt = tData.pagination.totalNumberOfResults;
-//tThis._BOARD_INFO.listCnt = tData.pagination.numberOfPages;
-
-tThis.setListHTML();
-};
-this.setListHTML = function(){
-      
- var tInfo = this._BOARD_INFO;
-var tResource = this._RESOURCE;
-var tHTML = "";
-var beginIdx = this.getBeginIndex();
-
-var param = $("#parameterList").val();
-
-for( var i=0; i<tResource.length; i++ ){
-/* 			console.log(tResource[i])	 */
-   var data = tResource[i];
-    
-   tHTML = tHTML.concat("<li>");
-   tHTML = tHTML.concat("<div class='prod_box'>")
-    tHTML = tHTML.concat("<p class='img'>")
-    if(data.attFileNm.indexOf('null')==-1){
-       tHTML = tHTML.concat("<img src='"+data.attFileNm +"' alt='"+data.goodsNm+"' />")	
-    }
-    tHTML = tHTML.concat("</p>")
-    tHTML = tHTML.concat("<p class='tit'>")
-    tHTML = tHTML.concat(data.goodsNm)
-    tHTML = tHTML.concat("</p>")
-    tHTML = tHTML.concat("<p class='price'>")
-    tHTML = tHTML.concat("<span class='cost'>")
-    tHTML = tHTML.concat(numberWithCommas(data.price))
-    tHTML = tHTML.concat("<span>원</span></span>")
-    tHTML = tHTML.concat("</p>")
-    tHTML = tHTML.concat("<div class='flag_box "+data.eventTypeSp.code+"'>")
-    tHTML = tHTML.concat("<p class='flg01'><span>1+1</span></p>")
-    tHTML = tHTML.concat("</div>")
-    
-    if(data.eventTypeSp.code == "GIFT"){
-       
-       tHTML = tHTML.concat("<div class='dum_box'>")
-       tHTML = tHTML.concat("<div class='arr_lt'></div>")
-       tHTML = tHTML.concat("<div class='dum_prd'>")
-       tHTML = tHTML.concat("<p class='tit'>덤증정 상품</p>")
-       if(data.giftAttFileNm != undefined){
-          tHTML = tHTML.concat("<p class='img'><img src='"+data.giftAttFileNm+"' alt='"+data.giftGoodsNm+"' /></p>")
-       }
-       tHTML = tHTML.concat("</div>")
-       tHTML = tHTML.concat("<div class='dum_txt'>")
-       tHTML = tHTML.concat("<p class='name'>")
-       if(data.giftGoodsNm != undefined){
-          tHTML = tHTML.concat("<br/>")
-          tHTML = tHTML.concat(data.giftGoodsNm)
-       }
-       tHTML = tHTML.concat("</p>")
-       tHTML = tHTML.concat("<p class='price'>")
-       if(data.giftPrice != undefined){
-          tHTML = tHTML.concat("<span class='cost'>")
-          tHTML = tHTML.concat(numberWithCommas(data.giftPrice))
-          tHTML = tHTML.concat("<span>원</span></span>")
-       }
-       tHTML = tHTML.concat("</p>")
-       tHTML = tHTML.concat("</div>")
-       tHTML = tHTML.concat("</div>")
-       tHTML = tHTML.concat("</div>")
-       tHTML = tHTML.concat("</li>")
-      
-       
-    }
-    
-    /*
-    덤증정상품일 경우 : if : data.eventTypeSp == GIFT 일 경우에 마우스가 오버랩될 경우, 아래 3가지를 화면에 보인다.	    	
-       상품이미지 : data.giftAttFileNm 
-       상품명 : data.giftGoodsNm 
-       상품가격 : data.giftPrice 
-    */
-    
-    $(".tblwrap .prod_list").append(tHTML);
-
-   var data_code = data.eventTypeSp.code;
-   
-} 
-
- 
-
-if(tHTML==""){
-   tHTML += "<li><p> 검색된 상품이 없습니다. </p></li>"
-}
-
-$( tInfo.container + " ul" ).html( tHTML );
-this.setPagingHTML();
-$(".dum_box").hide();
-
-$("div.prod_box").each(function(){
-   var $dum = $(this).find('.dum_box');
-   
-   if($dum.length!=0){
-      
-      $(this).mouseover(function(){
-         $dum.show()
-      });
-      
-      $(this).mouseout(function(){1
-         $dum.hide()
-      })
-   }
-   
-   /* if($dum!=null){
-      console.log(this)	
-   } */
-   
-})
-/* $(".tblwrap .prod_list li .prod_box") */
-
-//배너 아이콘
-$(".ONE_TO_ONE span").text("1+1");		
-
-$(".TWO_TO_ONE span").text("2+1");	
-$(".TWO_TO_ONE .flg01").css("background",'url("/_ui/desktop/common/images/gscvs/products/flag_bg.png") -65px 0px no-repeat');
-
-$(".GIFT span").text("덤증정");
-$(".GIFT span").css("font-size","small");
-$(".GIFT .flg01").css("background",'url("/_ui/desktop/common/images/gscvs/products/flag_bg.png")0 -55px no-repeat');
-      
-var pordlist = $('.prod_list > li').length;
-$('.prod_list > li').each(function(pordlist){
-   if((pordlist%4) == 0){
-      $('.prod_list > li:nth-child('+(pordlist+4)+')').addClass('mr0');
-   }
-});
-
-};	
-}
-
-GoodsPageController.prototype = new boardManagerController();
-var goodsPageController = new GoodsPageController();
-
-var eventTabController = new tabClickController();  //  임의 변수에 생성자 할당	
-
-//]]>
-</script>
+         전체 탭       : TOTAL --> 
 
 <div class="cnt_section mt50">
 <div class="brdwrap">
@@ -1186,18 +829,32 @@ var eventTabController = new tabClickController();  //  임의 변수에 생성�
       </div>
    </fieldset>
 </form>
-
 <div class="eventtab">	
    <!-- [영역1] : [1+1행사,2+1행사,덤증정행사,전체] tab -->			
 <ul class="myptab typ3">
-   <li><span class="active"><a href="#;" id="ONE_TO_ONE">1+1 행사</a></span></li>
-   <li><span><a href="#;" id="TWO_TO_ONE">2+1 행사</a></span></li>
-   <li><span><a href="#;" id="GIFT">덤증정 행사</a></span></li>
-   <li><span><a href="#;" id="TOTAL">전체</a></span></li>
+   <li>
+      <span class="active">
+         <a href="#;" id="ONE_TO_ONE">1+1 행사</a>
+      </span>
+   </li>
+   <li>
+      <span class>
+         <a href="#;" id="TWO_TO_ONE">2+1 행사</a>
+      </span>
+   </li>
+   <li>
+      <span class>
+         <a href="#;" id="GIFT">덤증정 행사</a>
+      </span>
+   </li>
+   <li>
+      <span class>
+         <a href="#;" id="TOTAL">전체</a>
+      </span>
+   </li>
 </ul>
-
 <h5 class="invisible">1+1 행사 제품 목록</h5>
-<div class="tblwrap mt50">
+<div class="tblwrap mt50" style="display: block;">
    <ul class="prod_list">
       <li>
          <div class="prod_box">
@@ -1212,23 +869,114 @@ var eventTabController = new tabClickController();  //  임의 변수에 생성�
          </p>
          <div class="flag_box ONE_TO_ONE">
             <p class="flg01">
-               <img src="https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/products/flag_bg.png">
                <span>1+1</span>
             </p>
          </div>
       </div>
    </li>
    <li>
-      <div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_6925678103133_002.jpg" alt="훼밀리)어묵향라웨이20G"></p><p class="tit">훼밀리)어묵향라웨이20G</p><p class="price"><span class="cost">900<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li><li><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_8801115720010_005.jpg" alt="서울우유)흰우유아이스크림"></p><p class="tit">서울우유)흰우유아이스크림</p><p class="price"><span class="cost">10,800<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li><li class="mr0"><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_8804246037064_001.jpg" alt="소포장)청결미1KG(봉/23년)"></p><p class="tit">소포장)청결미1KG(봉/23년)</p><p class="price"><span class="cost">7,900<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li><li><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_8804246034339_002.jpg" alt="불릴필요없는칼집찰현미500G"></p><p class="tit">불릴필요없는칼집찰현미500G</p><p class="price"><span class="cost">4,500<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li><li><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_8804246034322_002.jpg" alt="불릴필요없는칼집현미500G"></p><p class="tit">불릴필요없는칼집현미500G</p><p class="price"><span class="cost">4,500<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li><li><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_2800100126642_002.jpg" alt="거산)한입꿀밤고구마(1KG/봉)"></p><p class="tit">거산)한입꿀밤고구마(1KG/봉)</p><p class="price"><span class="cost">8,900<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li><li class="mr0"><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_8801045759296_002.jpg" alt="오뚜기)베이컨감자스프180G"></p><p class="tit">오뚜기)베이컨감자스프180G</p><p class="price"><span class="cost">3,800<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li></ul>
+      <div class="prod_box">
+         <p class="img">
+            <img src="https://image.woodongs.com/imgsvr/item/GD_6925678103133_002.jpg" alt="훼밀리)어묵향라웨이20G">
+         </p>
+         <p class="tit">훼밀리)어묵향라웨이20G</p>
+         <p class="price">
+            <span class="cost">
+               900
+               <span>원</span>
+            </span>
+         </p>
+         <div class="flag_box ONE_TO_ONE">
+            <p class="flg01">
+               <span>1+1</span>
+            </p>
+         </div>
+      </div>
+   </li>
+   <li>
+      <div class="prod_box">
+         <p class="img">
+            <img src="https://image.woodongs.com/imgsvr/item/GD_8801115720010_005.jpg" alt="서울우유)흰우유아이스크림">
+         </p>
+         <p class="tit">서울우유)흰우유아이스크림</p>
+         <p class="price">
+            <span class="cost">
+               10,800
+               <span>원</span>
+            </span>
+         </p>
+         <div class="flag_box ONE_TO_ONE">
+            <p class="flg01">
+               <span>1+1</span>
+            </p>
+         </div>
+      </div>
+   </li>
+   <li class="mr0">
+      <div class="prod_box">
+         <p class="img">
+            <img src="https://image.woodongs.com/imgsvr/item/GD_8804246037064_001.jpg" alt="소포장)청결미1KG(봉/23년)">
+         </p>
+         <p class="tit">소포장)청결미1KG(봉/23년)</p>
+         <p class="price">
+            <span class="cost">
+               7,900
+               <span>원</span>
+            </span>
+         </p>
+         <div class="flag_box ONE_TO_ONE">
+            <p class="flg01">
+               <span>1+1</span>
+            </p>
+         </div>
+      </div>
+   </li>
+   <li>
+      <div class="prod_box">
+         <p class="img">
+            <img src="https://image.woodongs.com/imgsvr/item/GD_8804246034339_002.jpg" alt="불릴필요없는칼집찰현미500G">
+         </p>
+         <p class="tit">불릴필요없는칼집찰현미500G</p>
+         <p class="price">
+            <span class="cost">
+               4,500
+               <span>원</span>
+            </span>
+         </p>
+         <div class="flag_box ONE_TO_ONE">
+            <p class="flg01">
+               <span>1+1</span>
+            </p>
+         </div>
+      </div>
+   </li>
+   <li><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_8804246034322_002.jpg" alt="불릴필요없는칼집현미500G"></p><p class="tit">불릴필요없는칼집현미500G</p><p class="price"><span class="cost">4,500<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li><li><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_2800100126642_002.jpg" alt="거산)한입꿀밤고구마(1KG/봉)"></p><p class="tit">거산)한입꿀밤고구마(1KG/봉)</p><p class="price"><span class="cost">8,900<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li><li class="mr0"><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_8801045759296_002.jpg" alt="오뚜기)베이컨감자스프180G"></p><p class="tit">오뚜기)베이컨감자스프180G</p><p class="price"><span class="cost">3,800<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li></ul>
    <div class="paging"><a href="#prev2" title="처음 페이지 보기" class="prev2">처음 페이지로 이동</a><a href="#prev;" title="이전 페이지 보기" class="prev">이전 페이지로 이동</a><span class="num"><a href="#;" title="내용보기" class="on">1</a> | <a href="#;" title="내용보기" onclick="goodsPageController.movePage(2)">2</a> | <a href="#;" title="내용보기" onclick="goodsPageController.movePage(3)">3</a> | <a href="#;" title="내용보기" onclick="goodsPageController.movePage(4)">4</a> | <a href="#;" title="내용보기" onclick="goodsPageController.movePage(5)">5</a> | <a href="#;" title="내용보기" onclick="goodsPageController.movePage(6)">6</a> | <a href="#;" title="내용보기" onclick="goodsPageController.movePage(7)">7</a> | <a href="#;" title="내용보기" onclick="goodsPageController.movePage(8)">8</a> | <a href="#;" title="내용보기" onclick="goodsPageController.movePage(9)">9</a> | <a href="#;" title="내용보기" onclick="goodsPageController.movePage(10)">10</a></span><a href="#next;" onclick="goodsPageController.moveControl(1)" title="다음 페이지 보기" class="next">다음 페이지로 이동</a><a href="#next2;" onclick="goodsPageController.movePage(67)" title="마지막 페이지 보기" class="next2">마지막 페이지로 이동</a></div>
 </div>
-
 <h5 class="invisible">2+1 행사 제품 목록</h5>
 <div class="tblwrap mt50" style="display: none;">
-   <ul class="prod_list"><li><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_6925678103140_002.jpg" alt="훼밀리)어묵마라웨이20G"></p><p class="tit">훼밀리)어묵마라웨이20G</p><p class="price"><span class="cost">900<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li><li><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_6925678103133_002.jpg" alt="훼밀리)어묵향라웨이20G"></p><p class="tit">훼밀리)어묵향라웨이20G</p><p class="price"><span class="cost">900<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li><li><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_8801115720010_005.jpg" alt="서울우유)흰우유아이스크림"></p><p class="tit">서울우유)흰우유아이스크림</p><p class="price"><span class="cost">10,800<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li><li class="mr0"><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_8804246037064_001.jpg" alt="소포장)청결미1KG(봉/23년)"></p><p class="tit">소포장)청결미1KG(봉/23년)</p><p class="price"><span class="cost">7,900<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li><li><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_8804246034339_002.jpg" alt="불릴필요없는칼집찰현미500G"></p><p class="tit">불릴필요없는칼집찰현미500G</p><p class="price"><span class="cost">4,500<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li><li><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_8804246034322_002.jpg" alt="불릴필요없는칼집현미500G"></p><p class="tit">불릴필요없는칼집현미500G</p><p class="price"><span class="cost">4,500<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li><li><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_2800100126642_002.jpg" alt="거산)한입꿀밤고구마(1KG/봉)"></p><p class="tit">거산)한입꿀밤고구마(1KG/봉)</p><p class="price"><span class="cost">8,900<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li><li class="mr0"><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_8801045759296_002.jpg" alt="오뚜기)베이컨감자스프180G"></p><p class="tit">오뚜기)베이컨감자스프180G</p><p class="price"><span class="cost">3,800<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li></ul>
-   <div class="paging"><a href="#prev2" title="처음 페이지 보기" class="prev2">처음 페이지로 이동</a><a href="#prev;" title="이전 페이지 보기" class="prev">이전 페이지로 이동</a><span class="num"><a href="#;" title="내용보기" class="on">1</a> | <a href="#;" title="내용보기" onclick="goodsPageController.movePage(2)">2</a> | <a href="#;" title="내용보기" onclick="goodsPageController.movePage(3)">3</a> | <a href="#;" title="내용보기" onclick="goodsPageController.movePage(4)">4</a> | <a href="#;" title="내용보기" onclick="goodsPageController.movePage(5)">5</a> | <a href="#;" title="내용보기" onclick="goodsPageController.movePage(6)">6</a> | <a href="#;" title="내용보기" onclick="goodsPageController.movePage(7)">7</a> | <a href="#;" title="내용보기" onclick="goodsPageController.movePage(8)">8</a> | <a href="#;" title="내용보기" onclick="goodsPageController.movePage(9)">9</a> | <a href="#;" title="내용보기" onclick="goodsPageController.movePage(10)">10</a></span><a href="#next;" onclick="goodsPageController.moveControl(1)" title="다음 페이지 보기" class="next">다음 페이지로 이동</a><a href="#next2;" onclick="goodsPageController.movePage(67)" title="마지막 페이지 보기" class="next2">마지막 페이지로 이동</a></div>
-</div>
-
+   <ul class="prod_list">
+      <li><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_6925678103140_002.jpg" alt="훼밀리)어묵마라웨이20G"></p><p class="tit">훼밀리)어묵마라웨이20G</p><p class="price"><span class="cost">900<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li>
+      <li><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_6925678103133_002.jpg" alt="훼밀리)어묵향라웨이20G"></p><p class="tit">훼밀리)어묵향라웨이20G</p><p class="price"><span class="cost">900<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li>
+      <li><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_8801115720010_005.jpg" alt="서울우유)흰우유아이스크림"></p><p class="tit">서울우유)흰우유아이스크림</p><p class="price"><span class="cost">10,800<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li>
+      <li class="mr0"><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_8804246037064_001.jpg" alt="소포장)청결미1KG(봉/23년)"></p><p class="tit">소포장)청결미1KG(봉/23년)</p><p class="price"><span class="cost">7,900<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li>
+      <li><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_8804246034339_002.jpg" alt="불릴필요없는칼집찰현미500G"></p><p class="tit">불릴필요없는칼집찰현미500G</p><p class="price"><span class="cost">4,500<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li>
+      <li><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_8804246034322_002.jpg" alt="불릴필요없는칼집현미500G"></p><p class="tit">불릴필요없는칼집현미500G</p><p class="price"><span class="cost">4,500<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li>
+      <li><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_2800100126642_002.jpg" alt="거산)한입꿀밤고구마(1KG/봉)"></p><p class="tit">거산)한입꿀밤고구마(1KG/봉)</p><p class="price"><span class="cost">8,900<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li>
+      <li class="mr0"><div class="prod_box"><p class="img"><img src="https://image.woodongs.com/imgsvr/item/GD_8801045759296_002.jpg" alt="오뚜기)베이컨감자스프180G"></p><p class="tit">오뚜기)베이컨감자스프180G</p><p class="price"><span class="cost">3,800<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li>
+      <div class="paging"><a href="#prev2" title="처음 페이지 보기" class="prev2">처음 페이지로 이동</a><a href="#prev;" title="이전 페이지 보기" class="prev">이전 페이지로 이동</a><span class="num"><a href="#;" title="내용보기" class="on">1</a> | 
+         <a href="#;" title="내용보기" onclick="goodsPageController.movePage(2)">2</a> | 
+         <a href="#;" title="내용보기" onclick="goodsPageController.movePage(3)">3</a> | 
+         <a href="#;" title="내용보기" onclick="goodsPageController.movePage(4)">4</a> | 
+         <a href="#;" title="내용보기" onclick="goodsPageController.movePage(5)">5</a> | 
+         <a href="#;" title="내용보기" onclick="goodsPageController.movePage(6)">6</a> | 
+         <a href="#;" title="내용보기" onclick="goodsPageController.movePage(7)">7</a> | 
+         <a href="#;" title="내용보기" onclick="goodsPageController.movePage(8)">8</a> | 
+         <a href="#;" title="내용보기" onclick="goodsPageController.movePage(9)">9</a> | 
+         <a href="#;" title="내용보기" onclick="goodsPageController.movePage(10)">10</a>
+      </span>
+      <a href="#next;" onclick="goodsPageController.moveControl(1)" title="다음 페이지 보기" class="next">다음 페이지로 이동</a>
+         <a href="#next2;" onclick="goodsPageController.movePage(67)" title="마지막 페이지 보기" class="next2">마지막 페이지로 이동</a></div>
 <h5 class="invisible">덤증정 행사 제품 목록</h5>
 <div class="tblwrap mt50" style="display: none;">
 <span class="noti_add0818"> * 덤증정 행사상품의 구매조건(수량 등)이 상이할 수 있으므로, 자세한 내용은 매장에서 확인해주세요. </span><!-- 2015-08-18 추가 -->
@@ -1322,51 +1070,315 @@ var eventTabController = new tabClickController();  //  임의 변수에 생성�
                <img src="https://image.woodongs.com/imgsvr/item/GD_8804246034339_002.jpg" alt="불릴필요없는칼집찰현미500G"></p><p class="tit">불릴필요없는칼집찰현미500G</p><p class="price"><span class="cost">4,500<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li><li><div class="prod_box"><p class="img">
                   <img src="https://image.woodongs.com/imgsvr/item/GD_8804246034322_002.jpg" alt="불릴필요없는칼집현미500G"></p><p class="tit">불릴필요없는칼집현미500G</p><p class="price"><span class="cost">4,500<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li><li><div class="prod_box"><p class="img">
                      <img src="https://image.woodongs.com/imgsvr/item/GD_2800100126642_002.jpg" alt="거산)한입꿀밤고구마(1KG/봉)"></p><p class="tit">거산)한입꿀밤고구마(1KG/봉)</p><p class="price"><span class="cost">8,900<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li><li class="mr0"><div class="prod_box"><p class="img">
-                        <img src="https://image.woodongs.com/imgsvr/item/GD_8801045759296_002.jpg" alt="오뚜기)베이컨감자스프180G"></p><p class="tit">오뚜기)베이컨감자스프180G</p><p class="price"><span class="cost">3,800<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li></ul>
-   <div class="paging">
-      <a href="#prev2" title="처음 페이지 보기" class="prev2">처음 페이지로 이동</a>
-      <a href="#prev;" title="이전 페이지 보기" class="prev">이전 페이지로 이동</a>
-      <span class="num"><a href="#;" title="내용보기" class="on">1</a> | 
-         <a href="#;" title="내용보기" onclick="goodsPageController.movePage(2)">2</a> | 
-         <a href="#;" title="내용보기" onclick="goodsPageController.movePage(3)">3</a> | 
-      <a href="#;" title="내용보기" onclick="goodsPageController.movePage(4)">4</a> | 
-      <a href="#;" title="내용보기" onclick="goodsPageController.movePage(5)">5</a> | 
-      <a href="#;" title="내용보기" onclick="goodsPageController.movePage(6)">6</a> | 
-      <a href="#;" title="내용보기" onclick="goodsPageController.movePage(7)">7</a> | 
-      <a href="#;" title="내용보기" onclick="goodsPageController.movePage(8)">8</a> | 
-      <a href="#;" title="내용보기" onclick="goodsPageController.movePage(9)">9</a> | 
-      <a href="#;" title="내용보기" onclick="goodsPageController.movePage(10)">10</a></span>
-      <a href="#next;" onclick="goodsPageController.moveControl(1)" title="다음 페이지 보기" class="next">다음 페이지로 이동</a>
-      <a href="#next2;" onclick="goodsPageController.movePage(67)" title="마지막 페이지 보기" class="next2">마지막 페이지로 이동</a></div>
-</div>
-
-<footer>
-   <div class="ftwrap">
+                        <img src="https://image.woodongs.com/imgsvr/item/GD_8801045759296_002.jpg" alt="오뚜기)베이컨감자스프180G"></p><p class="tit">오뚜기)베이컨감자스프180G</p><p class="price"><span class="cost">3,800<span>원</span></span></p><div class="flag_box ONE_TO_ONE"><p class="flg01"><span>1+1</span></p></div></div></li>
+                     </ul>
+                     <div class="paging">
+                        <a href="#prev2" title="처음 페이지 보기" class="prev2">처음 페이지로 이동</a>
+                        <a href="#prev;" title="이전 페이지 보기" class="prev">이전 페이지로 이동</a>
+                        <span class="num"><a href="#;" title="내용보기" class="on">1</a> | 
+                           <a href="#;" title="내용보기" onclick="goodsPageController.movePage(2)">2</a> | 
+                           <a href="#;" title="내용보기" onclick="goodsPageController.movePage(3)">3</a> | 
+                        <a href="#;" title="내용보기" onclick="goodsPageController.movePage(4)">4</a> | 
+                        <a href="#;" title="내용보기" onclick="goodsPageController.movePage(5)">5</a> | 
+                        <a href="#;" title="내용보기" onclick="goodsPageController.movePage(6)">6</a> | 
+                        <a href="#;" title="내용보기" onclick="goodsPageController.movePage(7)">7</a> | 
+                        <a href="#;" title="내용보기" onclick="goodsPageController.movePage(8)">8</a> | 
+                        <a href="#;" title="내용보기" onclick="goodsPageController.movePage(9)">9</a> | 
+                        <a href="#;" title="내용보기" onclick="goodsPageController.movePage(10)">10</a></span>
+                        <a href="#next;" onclick="goodsPageController.moveControl(1)" title="다음 페이지 보기" class="next">다음 페이지로 이동</a>
+                        <a href="#next2;" onclick="goodsPageController.movePage(67)" title="마지막 페이지 보기" class="next2">마지막 페이지로 이동</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- //corporation content -->
+   </div>
+   <script type="text/javascript">
+      //<![CDATA[
+      
+      $(document).ready(function(){
+         $.suggestionHtml();
+      
+         //높이조절
+         $(".family").on("click",function(){
+            if($(this).find(".ULWrap1st").height() == "284"){
+               $(this).find(".ULWrap1st").height("286"); /* 2020-07-15 수정 */
+               $(this).find(".ULWrap1st").css("top", "-260px"); /* 2021-07-01(브랜드) 수정 */
+            }
+            if($(this).find(".familyULWrap").height() == "284"){
+               $(this).find(".familyULWrap").height("612"); /* 2022-07-20 수정 */
+               $(this).find(".familyULWrap").css("top","-613px"); /* 2022-07-20 수정 */
+            }
+            return true;
+         });
+      
+         $(".asia").on("click",function(){
+            if($(this).find(".asiaULWrap").height() == "184"){
+               $(this).find(".asiaULWrap").height("80");
+               $(this).find(".asiaULWrap").css("top","-81px");
+            }
+            return true;
+         });
+         $(".brand").on("click",function(){
+            if($(this).find(".ULWrap2nd").height() == "184"){
+               $(this).find(".ULWrap2nd").height("469");/* 2023-12-1 수정 */
+               $(this).find(".ULWrap2nd").css("top","-470px"); /* 2023-12-1 수정 */
+            }
+            return true;
+         });
+         
+      });
+      
+      //Footer 입지제안 Layer render
+      $.suggestionHtml = function(){
+         var divExist = $(".layer").length;
+         if(divExist > 0){
+            $.renderLayer(1);
+         } else {
+            $.renderLayer(0);
+         }
+      };
+      
+      
+      //rendering Layer
+      var layerHtml = "";
+      
+      $.renderLayer = function(yn){
+         if(yn < 1){
+            layerHtml += '<div class="layer">';
+            layerHtml += '	<div class="bg"></div>';
+      
+         }
+      
+         layerHtml += '	<div id="layerFooter" class="pop-layer">';
+         layerHtml += '		<div class="popwrap lypop_my2">';
+         layerHtml += '			<div class="pop_tltwrap">';
+         layerHtml += '				<h4 class="pop_tlt1">입지제안</h4>';
+         layerHtml += '			</div>';
+         layerHtml += '			<div class="pop_cnt">';
+         layerHtml += '				<div class="all_wrap">';
+         layerHtml += '					<div class="tblwrap">';
+         layerHtml += '						<table class="tbl_ctype2" summary="입지제안의 기준 및 접수처를 확인할 수 있으며 사업부,추천기준,접수처를 제공합니다.">';
+         layerHtml += '							<caption>입지제안 안내팝업</caption>';
+         layerHtml += '							<colgroup>';
+         layerHtml += '								<col style="width:138px"/>';
+         layerHtml += '								<col style="width:285px"/>';
+         layerHtml += '								<col style="width:155px"/>';
+         layerHtml += '							</colgroup>';
+         layerHtml += '							<thead>';
+         layerHtml += '								<tr>';
+         layerHtml += '									<th scope="col">사업부</th>';
+         layerHtml += '									<th scope="col">추천 기준</th>';
+         layerHtml += '									<th scope="col">접수처</th>';
+         layerHtml += '								</tr>';
+         layerHtml += '							</thead>';
+         layerHtml += '							<tbody>';
+         layerHtml += '								<tr>';
+         layerHtml += '									<td class="ft_ct"><img alt="GS25 로고" src="http://hpimg.gsretail.com/_ui/desktop/common/images/gsretail/common/ft_logo_gs25.png" /></td>';
+         layerHtml += '									<td>지역 : 전국<br/>규모 : 영업면적 10평 이상 임차점포</td>';
+         layerHtml += '									<td style="padding-left:15px;"><a class="btn onbtn" href="http://gs25.gsretail.com/gscvs/ko/franchise-info/one-on-ones-consult/location-offer" target="_blank" title="새 창" style="padding:10px 10px; margin:0; font-size:13px; background:#666;">입지제안 바로가기</a></td>';
+         layerHtml += '								</tr>';
+         layerHtml += '								<tr>';
+         layerHtml += '									<td class="ft_ct"><img alt="GS수퍼마켓 로고" src="http://hpimg.gsretail.com/_ui/desktop/common/images/gsretail/common/ft_logo_gssuper.png" /></td>';
+         layerHtml += '									<td>지역 : 전국<br />규모 : 전용면적 50평 이상</td>';
+         layerHtml += '									<td style="padding-left:15px;"><a class="btn onbtn" href="https://gsthefresh.gsretail.com/thefresh/ko/franchise-info/one-on-ones-consult/offer-location" target="_blank" title="새 창" style="padding:10px 10px; margin:0; font-size:13px; background:#666;">입지제안 바로가기</a></td>';
+         layerHtml += '								</tr>';
+         layerHtml += '							</tbody>';
+         layerHtml += '						</table>';
+         layerHtml += '					</div>';
+         layerHtml += '					 <div class="btnwrap">';
+         layerHtml += '						<input class="btn sty01 onbtn" type="button" value="확인" onclick="$(\'#layerFooter\').find(\'.pop_cls a\').trigger(\'click\');" />';
+         layerHtml += '					</div>';
+         layerHtml += '				</div>';
+         layerHtml += '			</div>';
+         layerHtml += '			<div class="pop_cls">';
+         layerHtml += '				<a href="#">닫기</a>';
+         layerHtml += '			</div>';
+         layerHtml += '		</div>';
+         layerHtml += '	</div>';
+         
+         
+         layerHtml += '	<div  class="pop-layer" id="lypop_my11">';
+         layerHtml += '		<div class="popwrap lypop_my1" id="lypop_my11">';
+         layerHtml += '			<div class="pop_tltwrap">';
+         layerHtml += '				<h4 class="pop_tlt1">상품 입점 제안</h4>';
+         layerHtml += '			</div>';
+         layerHtml += '			<div class="pop_cnt">';
+         layerHtml += '				<div class="pop_tblwrap">';
+         layerHtml += '					<div class="pop_box2 w370">';
+         layerHtml += '						<div class="pop_txt1">';
+         layerHtml += '							<p>상품 입점 제안의 경우 이메일로 받고 있으며,<br />별도의 입점 제안 양식 없이 <br />회사 소개서, 상품 소개서 등 구비하신 내용을 <br />아래 메일 주소로 전달해주시면 됩니다.</p><p><strong class="ft_pink">product@watsons.co.kr</strong></p>';
+         layerHtml += '						</div>';
+         layerHtml += '						<div class="pop_txt3" style="font-size:12px;">';
+         layerHtml += '							*  담당 카테고리 MD 검토 후 순차적으로 피드백을 드리고 있어, 평균적으로<br />&nbsp;&nbsp;2주~4주 정도의 시간이 소요되는 점 참고바랍니다.';
+         layerHtml += '						</div>';
+         layerHtml += '						<div class="btnwrap pb10">';
+         layerHtml += '							<input type="button" value="확인" class="btn sty01 onbtn" onclick="$.closePopFooter(\'lypop_my11\');" />';
+         layerHtml += '						</div>';
+         layerHtml += '					</div>';
+         layerHtml += '				</div>';
+         layerHtml += '			</div>';
+         layerHtml += '			<div class="pop_cls">';
+         layerHtml += '				<a href="#">닫기</a>';
+         layerHtml += '			</div>';
+         layerHtml += '		</div>';
+         layerHtml += '	</div>';
+         
+         if(false){
+         /* 이메일주소 무단수집 거부 - 팝카드 */
+            layerHtml += ' <div id="layerFooter-email" class="pop-layer">';
+            layerHtml += '  <div class="popwrap lypop_my1" id="lypop_my1">';
+            layerHtml += '  	<div class="pop_tltwrap">';
+            layerHtml += '  		<h4 class="pop_tlt1">이메일주소 무단수집 거부</h4>';
+            layerHtml += '  	</div>';
+            layerHtml += '  	<div class="pop_cnt">';
+            layerHtml += '  		<div class="pop_tblwrap">';
+            layerHtml += '  			<div class="pop_box2 w370">';
+            layerHtml += '  				<div class="ptn_popdate"><strong>게시일 2003년 3월 24일</strong></div>';
+            layerHtml += '  				<div class="pop_txt1 mt20">';
+            layerHtml += '  					<p class="ptn_poptxt">본 웹사이트에 게시된 이메일 주소가<br />전자우편 수집 프로그램이나 그밖의 기술적<br />장치를 이용하여 무단으로 수집되는 것을 거부하며,<br />';
+            layerHtml += '  					이를 위반시 정보통신망법에 의해<br />형사 처벌됨을 유념하시기 바랍니다. </p>';
+            layerHtml += '  				</div>';
+            layerHtml += '  			</div>';
+            layerHtml += '  		</div>';
+            layerHtml += '  	</div>';
+            layerHtml += '  	<div class="pop_cls">';
+            layerHtml += '  		<a href="#">닫기</a>';
+            layerHtml += '  	</div>';
+            layerHtml += ' 	 </div>';
+            layerHtml += ' </div>';
+      
+         }else{
+      
+            /* 이메일주소 무단수집 거부 레이어 - 공통  */
+            layerHtml += '    <div id="layerFooter-email" class="pop-layer">';
+            layerHtml += '      <div class="popwrap lypop_my1">';
+            layerHtml += '      		<div class="pop_tltwrap">';
+            layerHtml += '      			<h4 class="pop_tlt1">이메일주소 무단수집 거부</h4>';
+            layerHtml += '      		</div>';
+            layerHtml += '      		<div class="pop_cnt">';
+            layerHtml += '      			<div class="all_wrap">';
+            layerHtml += '      				<div class="pop_box4">';
+            layerHtml += '      					본 웹사이트에 게시된 이메일 주소가 전자우편 수집<br />';
+            layerHtml += '      					프로그램이나 그밖의 기술적 장치를 이용하여 무단으로<br />';
+            layerHtml += '      					수집되는 것을 거부하며, 이를 위반시 정보통신망법에 의해<br />';
+            layerHtml += '      					형사 처벌됨을 유념하시기 바랍니다.';
+            layerHtml += '      				</div>';
+            layerHtml += '      				<div class="pop_txt2">※ 게시일 2003년 3월 24일</div>';
+            layerHtml += '      				<div class="btnwrap">';
+            layerHtml += '      					<input class="btn sty01 onbtn" type="button" value="확인" onclick="$.closePopFooter(\'layerFooter-email\');" />';
+            layerHtml += '      				</div>';
+            layerHtml += '      			</div>';
+            layerHtml += '      		</div>';
+            layerHtml += '      		<div class="pop_cls">';
+            layerHtml += '      			<a href="#">닫기</a>';
+            layerHtml += '      		</div>';
+            layerHtml += '      	</div>';
+            layerHtml += '     	</div>';
+      
+      
+         }
+      
+      
+      
+         if(yn < 1){
+            //layerHtml += '	</div>';
+            layerHtml += '</div>';
+      
+         }
+      
+         if(yn < 1){
+            $(".ftwrap").append(layerHtml);
+         } else {
+            $(".layer").append(layerHtml);
+         }
+      
+      };
+      
+      function fn_layer_popup(popNm, parentId) {
+         openLayerPopup(popNm, parentId);
+      }
+      
+      //팝업 레이어
+      function layer_open_footer(el, parentId){
+         var temp = $('#' + el);
+         var bg = temp.prev().hasClass('bg');	//dimmed 레이어를 감지하기 위한 boolean 변수
+      
+         $('.layer').fadeIn();
+         temp.fadeIn();
+      
+         /* 2015-08-14 update - focus오류 수정. */
+         temp.attr("tabIndex", "-1");
+         $(document)
+            .off('focusin.modalLayer')
+            .on('focusin.modalLayer', $.proxy(function (e) {
+               if ( temp[0] !== e.target && !temp.has(e.target).length) {
+                  temp.trigger('focus');
+               }
+            }, this));
+         
+         // 화면의 중앙에 레이어를 띄운다.
+         if (temp.height() < $(document).height() ) temp.css('margin-top', '-'+temp.height()/2+'px');
+         else temp.css('top', '0px');
+         if (temp.width() < $(document).width() ) temp.css('margin-left', '-'+temp.width()/2+'px');
+         else temp.css('left', '0px');
+         
+      
+         temp.find('.pop_cls a').click(function(e){
+            $('.layer').fadeOut();
+            $('.layer').find('.pop-layer').each(function(){
+               $(this).fadeOut();
+            });
+            
+            /* 2015-08-14 update - focus오류 수정. */
+            $(document).off('focusin.modalLayer');
+            
+            if(parentId != undefined) {
+               parentId.focus();	
+            }
+            
+            e.preventDefault();
+         });
+      
+         //배경을 클릭하면 레이어를 사라지게 하는 이벤트 핸들러
+         $('.layer .bg').click(function(e){
+            $('.layer').fadeOut();
+            $('.layer').find('.pop-layer').each(function(){
+               $(this).fadeOut();
+            });
+            e.preventDefault();
+         });
+      
+      };
+      
+      //확인 클릭 시 닫기
+      $.closePopFooter = function(el) {
+         $('#' + el).find('.pop_cls a').trigger('click');
+         /*
+         $('.layer').fadeOut();
+         $('.layer').find('.pop-layer').each(function(){
+            $(this).fadeOut();
+         });
+         $('#' + el).fadeOut();
+         */
+      };
+      
+      
+      
+      
+      //]]>
+      </script>
+<!--footer-->
+<div class="ftwrap">
    <!-- footer menu -->
    <!-- LOGGER(TM) TRACKING SCRIPT V.40 FOR logger.co.kr / 22400 : COMBINE TYPE / DO NOT ALTER THIS SCRIPT. -->
-   <script type="text/javascript">var _TRK_LID="22400";var _L_TD="ssl.logger.co.kr";var _TRK_CDMN="";</script>
-   <script type="text/javascript">
-      var _CDN_DOMAIN = location.protocol == "https:" ? "https://fs.bizspring.net" : "http://fs.bizspring.net";
-      (function(b,s){var f=b.getElementsByTagName(s)
-      [0],j=b.createElement(s);j.async=true;j.src='//fs.bizspring.net/fs4/bstrk.1m.js';f.parentNode.insertBefore(j,f);})(document,'script');</script>
       <noscript>
          <img alt="Logger Script" width="1" height="1"
             src="http://ssl.logger.co.kr/tracker.tsp?u=22400&amp;js=N" />
       </noscript>
       <!-- END OF LOGGER TRACKING SCRIPT -->
-      <script type="text/javascript">
-            //<![CDATA[
-   
-            $(document).ready(function(){
-               var otherFamilySite = new footerFamilySiteManager();
-               otherFamilySite.setResource( ".ret_link .family", ".ULWrap1st" );
-               otherFamilySite.setResource( ".ret_link .brand", ".ULWrap2nd" );
-               otherFamilySite.init();
-            });
-   
-            //]]>
-</script>
-      
 <div class="ft">
    <div class="ft_menu">
       <ul>
@@ -1453,7 +1465,6 @@ var eventTabController = new tabClickController();  //  임의 변수에 생성�
       <div class="left">
          <div class="btm_sns">
             <img src="http://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/main/btm_gs25_sns.jpg" alt="GS25와 소통하세요!">
-            <img src="https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/main/ico_btm_sns.png">
             <!-- 2020-12-21 수정 -->
             <ul>
                <li><a href="https://www.youtube.com/channel/UCl0HemfAt7dShJRf59_cuGQ" class="youtube" target="_blank" title="새 창"><span class="hide">youtube</span></a></li>
@@ -1507,7 +1518,7 @@ var eventTabController = new tabClickController();  //  임의 변수에 생성�
             </p>
             <!--						<p>
                footer.copy.txt2</p> 2022-08-01 삭제 -->
-            <p>Copyright 2015 GSRetail. Co. Ltd., ALL Right Reserved.</p>
+            <p> Copyright 2015 GSRetail. Co. Ltd., ALL Right Reserved. </p>
          </div>
       </div>
       <!-- 2015-09-02 수정 -->
@@ -1524,21 +1535,21 @@ var eventTabController = new tabClickController();  //  임의 변수에 생성�
    </div>
 </div> 
 <script type="text/javascript">
-      //<![CDATA[
+	//<![CDATA[
 
-      //1:1 문의 페이지 이동
-      $.goMantoMan = function(){
-         if("gsretail" == "gscvs"){
-            location.href="http://www.gsretail.com/gsretail/ko/customer-satisfaction/submain";
-         } else if("gscvs" == "gscvs"){
-            location.href="http://www.gsretail.com/gsretail/ko/customer-satisfaction/mantomancnsoundgs25form";
-         } else if("gssuper" == "gscvs"){
-            location.href="http://www.gsretail.com/gsretail/ko/customer-satisfaction/mantomancnsoundgssmform";
-         }
-      };
+	//1:1 문의 페이지 이동
+	$.goMantoMan = function(){
+		if("gsretail" == "gscvs"){
+			location.href="http://www.gsretail.com/gsretail/ko/customer-satisfaction/submain";
+		} else if("gscvs" == "gscvs"){
+			location.href="http://www.gsretail.com/gsretail/ko/customer-satisfaction/mantomancnsoundgs25form";
+		} else if("gssuper" == "gscvs"){
+			location.href="http://www.gsretail.com/gsretail/ko/customer-satisfaction/mantomancnsoundgssmform";
+		}
+	};
 
-      //]]>
-</script>
+	//]]>
+	</script>
 <div class="layer">	
    <div class="bg"></div>	
    <div id="layerFooter" class="pop-layer">		
