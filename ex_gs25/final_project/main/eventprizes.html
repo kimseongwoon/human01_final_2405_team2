@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/gs25.css" />
     <script src="../js/search.js"></script>
-    <link rel="stylesheet" href="../main/2+1event.html" />
 </head>
 
 <header>
@@ -192,7 +191,17 @@
 
 <!-- url 선언 -->
 <!-- 당첨자발표 -->
-<body style="margin: 0px; height: 100%; background-color: blue(14, 14, 14);"></body>
+<script type="text/javascript">
+   //<![CDATA[
+   
+   
+   $(document).ready(function(){
+      var gscvsGNB = new GNBController;
+      gscvsGNB.init( ".gnbw .gnb", ".gnb ul li h2 a", ".gnb ul.mlb_action", ".gnb_bg");
+   });
+   
+   //]]>
+   </script>
 <div class="gnbw">
 <h1 class="logo">
    <a href="/gscvs/ko/main">GS25</a>
@@ -838,23 +847,23 @@
       </span>
    </li>
    <li>
-      <span class>
+      <span>
          <a href="#;" id="TWO_TO_ONE">2+1 행사</a>
       </span>
    </li>
    <li>
-      <span class>
+      <span>
          <a href="#;" id="GIFT">덤증정 행사</a>
       </span>
    </li>
    <li>
-      <span class>
+      <span>
          <a href="#;" id="TOTAL">전체</a>
       </span>
    </li>
 </ul>
 <h5 class="invisible">1+1 행사 제품 목록</h5>
-<div class="tblwrap mt50" style="display: block;">
+<div class="tblwrap mt50">
    <ul class="prod_list">
       <li>
          <div class="prod_box">
@@ -1534,275 +1543,4 @@
       <!-- //2015-09-02 수정 -->					
    </div>
 </div> 
-<script type="text/javascript">
-	//<![CDATA[
 
-	//1:1 문의 페이지 이동
-	$.goMantoMan = function(){
-		if("gsretail" == "gscvs"){
-			location.href="http://www.gsretail.com/gsretail/ko/customer-satisfaction/submain";
-		} else if("gscvs" == "gscvs"){
-			location.href="http://www.gsretail.com/gsretail/ko/customer-satisfaction/mantomancnsoundgs25form";
-		} else if("gssuper" == "gscvs"){
-			location.href="http://www.gsretail.com/gsretail/ko/customer-satisfaction/mantomancnsoundgssmform";
-		}
-	};
-
-	//]]>
-	</script>
-<div class="layer">	
-   <div class="bg"></div>	
-   <div id="layerFooter" class="pop-layer">		
-      <div class="popwrap lypop_my2">			
-         <div class="pop_tltwrap">				
-            <h4 class="pop_tlt1">입지제안</h4>		
-         </div>			
-         <div class="pop_cnt">			
-            <div class="all_wrap">					
-               <div class="tblwrap">						
-                  <table class="tbl_ctype2" summary="입지제안의 기준 및 접수처를 확인할 수 있으며 사업부,추천기준,접수처를 제공합니다.">							
-                     <caption>입지제안 안내팝업</caption>							
-                     <colgroup>								
-                        <col style="width:138px">								
-                        <col style="width:285px">								
-                        <col style="width:155px">							
-                     </colgroup>							
-                     <thead>								
-                        <tr>									
-                           <th scope="col">사업부</th>									
-                           <th scope="col">추천 기준</th>									
-                           <th scope="col">접수처</th>								
-                        </tr>							
-                     </thead>							
-                     <tbody>								
-                        <tr>									
-                           <td class="ft_ct">
-                              <img alt="GS25 로고" src="http://hpimg.gsretail.com/_ui/desktop/common/images/gsretail/common/ft_logo_gs25.png">
-                           </td>									
-                           <td>
-                              지역 : 전국
-                              <br>
-                              규모 : 영업면적 10평 이상 임차점포
-                           </td>									
-                           <td style="padding-left:15px;">
-                              <a class="btn onbtn" href="http://gs25.gsretail.com/gscvs/ko/franchise-info/one-on-ones-consult/location-offer" target="_blank" title="새 창" style="padding:10px 10px; margin:0; font-size:13px; background:#666;">입지제안 바로가기</a>
-                           </td>								
-                        </tr>								
-                        <tr>									
-                           <td class="ft_ct">
-                              <img alt="GS수퍼마켓 로고" src="http://hpimg.gsretail.com/_ui/desktop/common/images/gsretail/common/ft_logo_gssuper.png">
-                           </td>									
-                           <td>
-                              지역 : 전국
-                              <br>
-                              규모 : 전용면적 50평 이상
-                           </td>									
-                           <td style="padding-left:15px;">
-                              <a class="btn onbtn" href="https://gsthefresh.gsretail.com/thefresh/ko/franchise-info/one-on-ones-consult/offer-location" target="_blank" title="새 창" style="padding:10px 10px; margin:0; font-size:13px; background:#666;">입지제안 바로가기</a>
-                           </td>								
-                        </tr>	
-                     </tbody>						
-                  </table>					
-               </div>					 
-               <div class="btnwrap">						
-                  <input class="btn sty01 onbtn" type="button" value="확인" onclick="$('#layerFooter').find('.pop_cls a').trigger('click');">					
-               </div>				
-            </div>			
-         </div>			
-         <div class="pop_cls">				
-            <a href="#">닫기</a>			
-         </div>		
-      </div>	
-   </div>	
-   <div class="pop-layer" id="lypop_my11">
-      <div class="popwrap lypop_my1" id="lypop_my11">	
-         <div class="pop_tltwrap">				
-            <h4 class="pop_tlt1">상품 입점 제안</h4>	
-         </div>			
-         <div class="pop_cnt">				
-            <div class="pop_tblwrap">					
-               <div class="pop_box2 w370">						
-                  <div class="pop_txt1">							
-                     <p>
-                        상품 입점 제안의 경우 이메일로 받고 있으며,
-                        <br>
-                        별도의 입점 제안 양식 없이 
-                        <br>
-                        회사 소개서, 상품 소개서 등 구비하신 내용을 
-                        <br>
-                        아래 메일 주소로 전달해주시면 됩니다.
-                     </p>
-                     <p>
-                        <strong class="ft_pink">product@watsons.co.kr</strong>
-                     </p>						
-                  </div>	
-                  <div class="pop_txt3" style="font-size:12px;">							
-                     *  담당 카테고리 MD 검토 후 순차적으로 피드백을 드리고 있어, 평균적으로
-                     <br>
-                     &nbsp;&nbsp;2주~4주 정도의 시간이 소요되는 점 참고바랍니다.						
-                  </div>						
-                  <div class="btnwrap pb10">							
-                     <input type="button" value="확인" class="btn sty01 onbtn" onclick="$.closePopFooter('lypop_my11');">						
-                  </div>					
-               </div>				
-            </div>			
-         </div>			
-         <div class="pop_cls">				
-            <a href="#">닫기</a>			
-         </div>		
-      </div>	
-   </div>    
-   <div id="layerFooter-email" class="pop-layer">      
-      <div class="popwrap lypop_my1">      		
-         <div class="pop_tltwrap">      			
-            <h4 class="pop_tlt1">이메일주소 무단수집 거부</h4>      		
-         </div>      		
-         <div class="pop_cnt">      			
-            <div class="all_wrap">      				
-               <div class="pop_box4">      					
-                  본 웹사이트에 게시된 이메일 주소가 전자우편 수집
-                  <br>      					
-                  프로그램이나 그밖의 기술적 장치를 이용하여 무단으로
-                  <br>      	
-                  수집되는 것을 거부하며, 이를 위반시 정보통신망법에 의해
-                  <br>      					
-                  형사 처벌됨을 유념하시기 바랍니다.      				
-               </div>      				
-               <div class="pop_txt2">※ 게시일 2003년 3월 24일</div>      				
-               <div class="btnwrap">      					
-                  <input class="btn sty01 onbtn" type="button" value="확인" onclick="$.closePopFooter('layerFooter-email');">      				
-               </div>      			
-            </div>      		
-         </div>      		
-         <div class="pop_cls">      			
-            <a href="#">닫기</a>      		
-         </div>      	
-      </div>     	
-   </div>
-</div>
-</div>
-<!-- //footer -->
-<div class="popup-outer-layer">
-   <div class="bg"></div>
-   <!-- id중복확인 팝업 시작 -->
-   <div class="popwrap lypop_my2 pop-inner-layer" id="jungdoPop">
-      <style type="text/css"> 
-      .pop_cnt .system { width:570px; margin:0 auto; font-family: "NanumBarunGothic", NanumBarunGothic,"돋움",Dotum, Arial,sans-serif;}
-      .pop_cnt .system .txt01 { font-size:16px !important; line-height: 22px;}
-      .pop_cnt .system .box { text-align:center; background:#fbfbfb; border:1px solid #dfdfdf; margin:19px 0; padding:20px 70px;}
-      .pop_cnt .system .box .inner > p { text-align:left; line-height:22px;}
-      .pop_cnt .system .box .inner .btnwrap { padding-top:15px !important;}
-      .pop_cnt .system .col_section { width:590px; overflow:hidden; margin-bottom:23px;}
-      .pop_cnt .system .col_section .line { position:relative; float:left; height:210px;}
-      .pop_cnt .system .col_section .line.order01 { border-right:1px solid #dfdfdf; padding-right:15px;}
-      .pop_cnt .system .col_section .line.order02 { border-right:1px solid #dfdfdf; padding:0 15px;}
-      .pop_cnt .system .col_section .line.order03 { padding:0 15px;}
-      .pop_cnt .system .col_section .line .tit { font-size:18px; font-weight:bold; color:#000; margin-bottom:20px; text-align:center;}
-      .pop_cnt .system .col_section .line span { line-height:22px;}
-      .pop_cnt .system .col_section .line.order01 .btnwrap {position:absolute; left:20px; bottom:0;}
-      .pop_cnt .system .col_section .line.order02 .btnwrap {position:absolute; left:50px; bottom:0;}
-      .pop_cnt .system .col_section .line.order03 .btnwrap {position:absolute; left:38px; bottom:0;}
-      </style> 
-      <div class="pop_tltwrap">
-         <h4 class="pop_tlt1 dot">제보대상, 제보자 포상/비밀번호 제도 및 고충처리제도 안내</h4>
-      </div>
-      <div class="pop_cnt">
-         <div class="system">
-            <strong class="txt01">
-               <span class="ft_org">GS리테일 임직원 및 파트너사의 부정/불공정 행위 제보와 개선제안</span>
-               에 대한 의견을
-               <br>
-                  쓰는 곳입니다. 아래 각 메뉴별 안내사항을 참고 하셔서 작성하여 주시기 바랍니다.
-            </strong>
-            <div class="box">
-               <div class="inner">
-                  <p>
-                     GS25/GS THE FRESH 이용 중 고객불만/불편/칭찬사항은 "고객센터 &gt; 고객의 소리" 
-                     <br>
-                     <!-- 2019_GSTHEFRESH_로고변경 -->
-                        코너에 접수 하시면 관련부서에서 신속히 처리가 됩니다.
-                  </p>
-                  <div class="btnwrap">
-                     <a href="/gscvs/ko/customer-satisfaction/submain" class="btn_arr pt2">고객의 소리 바로가기</a>
-                  </div>
-               </div>
-            </div>
-            <div class="col_section">
-               <div class="line order01">
-                  <p class="tit">정도경영 목소리</p>
-                  <span>
-                     임직원/파트너사 등 부정/불공정
-                     <br>
-                        사항 제보
-                     <br> 
-                     <!-- 2016-01-06 수정 -->
-                        ⇒ 조사부서(경영진단팀) 제보
-                  </span>
-                  <div class="btnwrap bottom">
-                     <a href="/gscvs/ko/customer-satisfaction/precisioncnsoundform" class="btn sty04 onbtn">문의하기</a>
-                     <!-- 2015-09-01 수정 -->
-                  </div>
-               </div>
-               <div class="line order02">
-                  <p class="tit">CEO에게 말한다</p>
-                  <span>임직원/파트너사 등 부정/불공정<br>사항 제보, 칭찬사례/기타 <br>
-                        CEO에게 직접 건의 하고 싶은<br>사항 등 ⇒ CEO에게 직접 제보
-                  </span>
-                  <div class="btnwrap bottom">
-                     <a href="/gscvs/ko/customer-satisfaction/toceocnsoundform" class="btn sty04 onbtn">문의하기</a>
-                     <!-- 2015-09-01 수정 -->
-                  </div>
-               </div>
-               <div class="line order03">
-                  <p class="tit">파트너사 목소리</p>
-                  <span>
-                     거래상 애로(고충)/개선요청
-                     <br>
-                     사항 제안(불공정 제외)
-                     <br>
-                        ⇒ 담당부서(경영진단팀)에서
-                     <br> 
-                        즉시 확인 후, 제안사항에 대한
-                     <br>
-                        개선계획 수립 및 회신
-                  </span>
-                  <div class="btnwrap bottom">
-                     <a href="/gscvs/ko/customer-satisfaction/partnercnsoundform" class="btn sty04 onbtn">문의하기</a>
-                     <!-- 2015-09-01 수정 -->
-                  </div>
-               </div>
-            </div>
-            <p class="mt20 ft_org">
-               ※ GS리테일에서는 『
-               <a href="http://www.gsretail.com/gsretail/ko/corporation/jeongdo-management/system/rewards">
-                  <span class="ft_blue ft_ud">제보자 포상제도</span>
-               </a> 
-               』 를 실시하며, 『
-            <a href="http://www.gsretail.com/gsretail/ko/corporation/jeongdo-management/system/rewards?id=cusl_tab2">
-               <span class="ft_blue ft_ud">제보자 보호제도</span>
-            </a>
-               』 를 운영합니다. 
-               <!-- 2016-01-06 수정 -->
-            </p>
-            <div class="pop_cls">
-               <a href="#">닫기</a>
-            </div>
-         </div>
-      </div>		
-   </div>
-   <div class="popwrap lypop_my2 pop-inner-layer" id="superQrPop" style="width:400px;">
-      <div class="pop_tltwrap">
-         <h4 class="pop_tlt1">GS수퍼마켓 앱 다운로드</h4>
-      </div>
-      <div class="pop_cnt" tabindex="0" style="padding:0; margin:0; overflow-y:hidden; height:570px;">
-         <div class="all_wrap" style="padding:0;">
-            <img alt="결제+할인+적립을 QR하나로 간편하게! 한 번에 되는 GS수퍼마켓만의 스마트한 앱! QR찍고 앱 설치하세요!" src="http://hpimg.gsretail.com/_ui/desktop/common/images/gssuper/main/btm_super_app.jpg">
-         </div>
-      </div>
-      <div class="pop_cls">
-         <a href="#">닫기</a>
-      </div>
-   </div>
-</div>
-</div>
-                                            
