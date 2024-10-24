@@ -12,6 +12,13 @@ body {
     font-family: 'NanumBarunGothic', NanumBarunGothic, '돋움', Dotum, Arial, sans-serif;
 }
 
+/*content*/
+.cntwrap {
+    width: 100%;
+    margin: auto;
+    border-top: 1px solid #dfdfdf;
+}
+
 html {
     -webkit-text-size-adjust: none;
     -ms-text-size-adjust: none;
@@ -50,7 +57,7 @@ html {
     position: relative;
     float: left;
     display: inline-block;
-    background: url(/_ui/desktop/common/images/gsretail/common/icon_nav.png) no-repeat;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gsretail/common/icon_nav.png) no-repeat;
     background-position: 0 -51px;
     height: 48px;
     padding-left: 20px;
@@ -338,7 +345,7 @@ md_controller .btn.stop {
 .md_controller a {
     margin-left: 0;
     display: block;
-    background: url(/_ui/desktop/common/images/gscvs/products/ico_arr.png) no-repeat;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/products/ico_arr.png) no-repeat;
     text-indent: -999em;
 }
 
@@ -442,6 +449,12 @@ md_controller .btn.stop {
 
 fieldset, img, table, caption, tbody, tfoot, thead, tr, th, td, button, hr {
     border: 0 none;
+}
+
+button {
+    overflow: visible;
+    border: 0 none;
+    cursor: pointer;
 }
 
 img {
@@ -656,7 +669,7 @@ address, caption, cite, code, dfn, em, strong, th, var {
 
 .prod_list li {
     float: left;
-    margin: 0 20px 30px 0;
+    margin: 0 15px 30px 0;
 }
 
 .prod_list .prod_box {
@@ -830,7 +843,7 @@ element.style {
 
 .ft .ft_menu li a {
     color: #333;
-    background: url(/_ui/desktop/common/images/gscvs/common/bg_sns.gif) no-repeat top left;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/bg_sns.gif) no-repeat top left;
     padding-left: 12px;
 }
 
@@ -882,6 +895,11 @@ element.style {
     height: 43px;
 }
 
+.brdwrap .brd .brd_rtl a:hover, .brdwrap .brd .brd_rtl a.on {
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/menu_brd.gif) no-repeat;
+    background-position: 0px -57px;
+}
+
 /*company info*/
 .cpinfo {
     position: fixed;
@@ -905,12 +923,6 @@ element.style {
     top: -410px;
 }
 
-.cpinfo, .push-body {
-    -webkit-transition: all 0.15s ease;
-    -moz-transition: all 0.15s ease;
-    transition: all 0.15s ease;
-}
-
 .cpmenu li h3 {
     padding: 20px 0 20px 10px;
 }
@@ -930,8 +942,28 @@ element.style {
     background: url(/_ui/desktop/common/images/gsretail/common/ico_ball2.gif) 10px 5px no-repeat;
 }
 
+.btn_com {
+    position: relative;
+    cursor: pointer;
+    float: right;
+    width: 64px;
+    padding: 6px 0px;
+    text-align: center;
+    border: 1px solid #dfdfdf;
+    background: #fff;
+    color: #0072bc;
+    font-size: 11px;
+}
+
 .cpmenu li ul {
     margin-bottom: 20px;
+}
+
+.push-body {
+    /* overflow-x: hidden; */
+    position: relative;
+    left: 0;
+    z-index: 99;
 }
 
 .cpmenu > ul > li {
@@ -954,6 +986,12 @@ element.style {
     width: 100%;
     height: 100%;
     z-index: 1000;
+}
+
+.cpinfo, .push-body {
+    -webkit-transition: all 0.15s ease;
+    -moz-transition: all 0.15s ease;
+    transition: all 0.15s ease;
 }
 
 .popup-outer-layer .bg {
@@ -1036,7 +1074,7 @@ element.style {
 
 .gnbwrap .gnb .skyscraper a {
     display: block;
-    background: url(/images/gs25/thumnail/gs25_youtube_sky.png) no-repeat;
+    background: url(https://hpimg.gsretail.com/images/gs25/thumnail/gs25_youtube_sky.png) no-repeat;
     width: 125px;
     height: 124px;
 }
@@ -1058,11 +1096,23 @@ element.style {
     font-family: 'NanumBarunGothic', NanumBarunGothic;
 }
 
+.gnbw {
+    position: relative;
+    width: 960px;
+    margin: 0 auto;
+}
+
 .gnbwrap .gnb li h2 > a {
     display: block;
     color: #333333;
     padding: 34px 13px 29px 13px;
     font-size: 20px;
+}
+
+.gnbwrap .gnb li h2 > a:hover {
+    border-bottom: 3px solid #338ec9;
+    color: #0072bc;
+    padding: 34px 13px 26px 13px;
 }
 
 .mlb_cnt {
@@ -1092,7 +1142,7 @@ element.style {
 }
 
 .brdwrap .brd .brd_gs25 a:hover, .brdwrap .brd .brd_gs25 a.on {
-    background: url(/_ui/desktop/common/images/gscvs/common/menu_brd.gif) no-repeat;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/menu_brd.gif) no-repeat;
     background-position: -77px -57px;
 }
 
@@ -1101,9 +1151,19 @@ element.style {
     height: 43px;
 }
 
+.brdwrap .brd .brd_gsshop a:hover, .brdwrap .brd .brd_gsshop a.on {
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/menu_brd.gif) no-repeat;
+    background-position: -142px -57px;
+}
+
 .brdwrap .brd .brd_gsssm a {
     width: 114px;
     height: 43px;
+}
+
+.brdwrap .brd .brd_gsssm a:hover, .brdwrap .brd .brd_gsssm a.on {
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/menu_brd.gif) no-repeat;
+    background-position: -225px -57px;
 }
 
 .brdwrap .brd .brd_gspop a {
@@ -1111,23 +1171,28 @@ element.style {
     height: 43px;
 }
 
+.brdwrap .brd .brd_gspop a:hover, .brdwrap .brd .brd_gspop a.on {
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/menu_brd.gif) no-repeat;
+    background-position: -343px -57px;
+}
+
 .brdwrap .right_brd ul li {
     float: left;
     padding-left: 18px;
-}
-
-.brdwrap .uty li:first-child {
-    padding-left: 0px;
-    background: none;
 }
 
 .brdwrap .uty li {
     position: relative;
     float: left;
     margin: 5px 3px;
-    background: url(/_ui/desktop/common/images/gscvs/common/icon_gswsn.png) no-repeat;
+    background: url(https://hpimg.gsretail.com/_ui/desktop/common/images/gscvs/common/icon_gswsn.png) no-repeat;
     background-position: 0 -289px;
     padding-left: 6px;
+}
+
+.brdwrap .uty li:first-child {
+    padding-left: 0px;
+    background: none;
 }
 
 .brdwrap .uty li a {
@@ -1199,32 +1264,6 @@ element.style {
     left: 78px;
 }
 
-.btn_com {
-    position: relative;
-    cursor: pointer;
-    float: right;
-    width: 64px;
-    padding: 6px 0px;
-    text-align: center;
-    border: 1px solid #dfdfdf;
-    background: #fff;
-    color: #0072bc;
-    font-size: 11px;
-}
-
-button {
-    overflow: visible;
-    border: 0 none;
-    cursor: pointer;
-}
-
-.push-body {
-    /* overflow-x: hidden; */
-    position: relative;
-    left: 0;
-    z-index: 99;
-}
-
 .brdwrap .uty {
     position: relative;
     float: right;
@@ -1265,7 +1304,7 @@ element.style {
 .gnbwrap .gnb {
     float: left;
     margin: 0 auto;
-    width: 1000px;
+    width: 780px;
 }
 
 element.style {
@@ -1802,8 +1841,15 @@ head {
     background-position: 0 0;
 }
 
-.cntwrap {
-    width: 100%;
-    margin: auto;
-    border-top: 1px solid #dfdfdf;
+.brdwrap .uty li a.lang:hover, .brdwrap .uty li a.on {
+    display: block;
+    background: url(/_ui/desktop/common/images/gscvs/common/icon_lang.png) no-repeat;
+    background-position: right -23px;
+    padding-right: 18px;
+}
+
+.container .heroes .hero:hover {
+    background-color: blue;
+    transform: skewX(-14deg) scale(1.5);
+    z-index: 1;
 }
